@@ -1,2 +1,2 @@
 # MyMediaRy
-Mulitmedia library manager on Android
+Multimedia library manager on Android
