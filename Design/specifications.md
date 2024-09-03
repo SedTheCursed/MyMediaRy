@@ -13,6 +13,7 @@
 + <a href="#strategy">IV. Lien avec la stratégie</a>
 + <a href="#budget">V. Budget</a>
 + <a href="#delay">VI. Délais - contraintes planning</a>
++ <a href="#risques">VII. Risques</a>
 
 <h2 id="infos">I. Informations générales</h2>
 
@@ -129,190 +130,40 @@ Cependant, il serait souhaitable qu'il ait atteint certaines étapes aux dates s
 - **mi-novembre 2024 :** Wishlist finie
 - **Janvier 2025 :** Commencer la version 2.0
 
-[//]: # (7 Risques&#41;)
-
-[//]: # (Risque)
-
-[//]: # (Problèmes de)
-
-[//]: # (sécurité des)
-
-[//]: # (donnéesDescription)
-
-[//]: # (Fuite de données)
-
-[//]: # (personnelles des)
-
-[//]: # (utilisateurs,)
-
-[//]: # (violation de la vie)
-
-[//]: # (privée, attaques de)
-
-[//]: # (pirates)
-
-[//]: # (informatiquesProbabilité)
-
-[//]: # (4/5Gravité)
-
-[//]: # (5/5Solution)
-
-[//]: # (Renforcer les)
-
-[//]: # (mesures de)
-
-[//]: # (sécurité, cryptage)
-
-[//]: # (des données, audits)
-
-[//]: # (de sécurité)
-
-[//]: # (réguliers)
-
-[//]: # (Baisse de la)
-
-[//]: # (demande pour)
-
-[//]: # (l'applicationManque d'intérêt)
-
-[//]: # (des étudiants ou)
-
-[//]: # (des entreprises,)
-
-[//]: # (évolution du)
-
-[//]: # (marché,)
-
-[//]: # (compétition accrue3/54/5Étude de marché)
-
-[//]: # (continue,)
-
-[//]: # (adaptation rapide)
-
-[//]: # (aux changements,)
-
-[//]: # (campagnes de)
-
-[//]: # (marketing ciblées)
-
-[//]: # (Problèmes de)
-
-[//]: # (Dysfonctionnemen)
-
-[//]: # (compatibilité avec)
-
-[//]: # (ts sur certains)
-
-[//]: # (les appareils)
-
-[//]: # (types d'appareils)
-
-[//]: # (mobiles,)
-
-[//]: # (problèmes de)
-
-[//]: # (performance, bugs2/53/5Tests de)
-
-[//]: # (compatibilité)
-
-[//]: # (approfondis sur)
-
-[//]: # (une large gamme)
-
-[//]: # (d'appareils, mises)
-
-[//]: # (à jour régulières)
-
-[//]: # (Difficultés de)
-
-[//]: # (recrutement pour)
-
-[//]: # (les entreprisesManque)
-
-[//]: # (d'adhésion des)
-
-[//]: # (entreprises au)
-
-[//]: # (concept, résistance)
-
-[//]: # (au changement,)
-
-[//]: # (complexité des)
-
-[//]: # (intégrations3/54/5Campagnes de)
-
-[//]: # (sensibilisation)
-
-[//]: # (auprès des)
-
-[//]: # (entreprises, offres)
-
-[//]: # (incitatives, soutien)
-
-[//]: # (technique dédié)
-
-[//]: # (Défaillance du)
-
-[//]: # (Problèmes)
-
-[//]: # (système de gestion d'authentification,)
-
-[//]: # (des utilisateurs)
-
-[//]: # (accès non)
-
-[//]: # (autorisés, perte)
-
-[//]: # (d'informations)
-
-[//]: # (utilisateurs2/54/5Mise en place de)
-
-[//]: # (protocoles de)
-
-[//]: # (sécurité robustes,)
-
-[//]: # (sauvegardes)
-
-[//]: # (régulières des)
-
-[//]: # (données)
-
-[//]: # (utilisateurs.)
-
-[//]: # (8 Commentaires internes)
-
-[//]: # (Le client est lui-même un professionnel du développement informatique et est le maître de stage des)
-
-[//]: # (développeurs placés sur ce projet.)
-
-[//]: # (Le client très pointilleux sur le pixel perfect et la cohérence graphique après validation de celles-ci.)
-
-[//]: # (Le client a choisi lui-même l’environnement technique utilisé pour le développement du projet)
-
-[//]: # (Studee.)
-
-[//]: # (Le client n’a défini ni contrainte de temps ni budget. Il souhaite gérer cela de son côté puisque le)
-
-[//]: # (projet est développé au sein de sa propre entreprise.)
-
-[//]: # (Phase 1: Planning)
-
-[//]: # ()
-[//]: # (The planning phase is the foundation of any successful software development project. This is where the project team, including stakeholders, defines the scope, objectives, timelines, and resources required for the project. A detailed project plan outlines this phase's tasks, dependencies, and milestones.)
-
-[//]: # (Key Activities in the Planning Phase)
-
-[//]: # ()
-[//]: # (Project Scope Definition: Clearly define the features and functionalities that the software should include. This helps in setting realistic expectations for the project.)
-
-[//]: # ()
-[//]: # (Requirement Analysis: Gather and analyze user requirements to understand what the software is expected to achieve. This involves interacting with stakeholders, end-users, and subject matter experts.)
-
-[//]: # ()
-[//]: # (Feasibility Study: Evaluate the technical and financial feasibility of the project. This includes assessing whether the required technology is available, whether the project is financially viable, and whether potential risks are identified.)
-
-[//]: # ()
-[//]: # (Resource Planning: Determine the human, technical, and financial resources needed for the project. This involves identifying the roles and responsibilities of team members and allocating budget and equipment.)
-
-[//]: # ()
-[//]: # (Project Schedule: Develop a detailed project schedule with timelines for each phase and task. This helps in tracking progress and ensuring that the project stays on schedule.)
+<h2 id="risques">VII. Risques</h2>
+
+<table>
+<thead>
+<tr>
+<th>Risque</th>
+<th>Description</th>
+<th>Probabilité</th>
+<th>Gravité</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Problèmes de sécurité des données</td>
+<td>Fuite de données personnelles des utilisateurs, violation de la vie privée, attaques de pirates informatiques</td>
+<td>4/5</td>
+<td>5/5</td>
+<td>Renforcer les mesures de sécurité, cryptage des données, audits de sécurité réguliers</td>
+</tr>
+<tr>
+<td>Problèmes de compatibilité avec les appareils</td>
+<td>Dysfonctionnements sur certains types d'appareils mobiles, problèmes de performance, bugs</td>
+<td>2/5</td>
+<td>3/5</td>
+<td>Tests de compatibilité approfondis sur une large gamme d'appareils, mises à jour régulières</td>
+</tr>
+<tr>
+<td>Défaillance du système de gestion des utilisateurs</td>
+<td>Problèmes d'authentification, accès non autorisés, perte d'informations utilisateurs</td>
+<td>2/5</td>
+<td>4/5</td>
+<td>Mise en place de protocoles de sécurité robustes, sauvegardes régulières des données utilisateurs.
+</td>
+</tr>
+</tbody>
+</table>
