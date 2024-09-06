@@ -14,8 +14,18 @@
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyMediaRy" />
+        <activity
+            android:name=".WoofActivity"
+            android:exported="false"
+            android:label="@string/title_activity_woof"
+            android:theme="@style/Theme.MyMediaRy">
+        </activity>
+        <activity
+            android:name=".UnscrambleActivity"
+            android:label="@string/title_activity_unscramble"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.MyMediaRy">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
