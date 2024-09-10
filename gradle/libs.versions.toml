@@ -4,16 +4,16 @@ kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
-espressoCore = "3.6.1"
+espresso = "3.6.1"
 activityCompose = "1.9.2"
 composeBom = "2024.09.00"
 lifecycle = "2.8.5"
+navigation = "2.8.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
-androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
@@ -26,6 +26,11 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 material-icons = {group = "androidx.compose.material", name = "material-icons-extended" }
 lifecycle = {group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+navigation-runtime-ktx = { group = "androidx.navigation", name = "navigation-runtime-ktx", version.ref = "navigation" }
+navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation" }
+navigation-testing = { group = "androidx.navigation", name = "navigation-testing", version.ref = "navigation"}
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
+espresso-intents = { group = "androidx.test.espresso", name = "espresso-intents", version.ref = "espresso" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
