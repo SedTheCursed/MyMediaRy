@@ -1,4 +1,4 @@
-package com.brosedda.mymediary
+package com.brosedda.mymediary.tutorials.unscramble
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -7,7 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.brosedda.mymediary.ui.GameScreen
+import com.brosedda.mymediary.tutorials.unscramble.ui.GameScreen
 import com.brosedda.mymediary.ui.theme.MyMediaRyTheme
 
 class UnscrambleActivity : ComponentActivity() {

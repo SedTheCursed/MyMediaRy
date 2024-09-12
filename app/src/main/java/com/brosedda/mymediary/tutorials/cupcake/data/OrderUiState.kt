@@ -1,4 +1,4 @@
-package com.brosedda.mymediary.data
+package com.brosedda.mymediary.tutorials.cupcake.data
 
 /**
  * Data class that represents the current UI state in terms of [quantity], [flavor],

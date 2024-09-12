@@ -1,13 +1,13 @@
-package com.brosedda.mymediary.ui.viewModel
+package com.brosedda.mymediary.tutorials.unscramble.ui.viewModel
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import com.brosedda.mymediary.data.MAX_NO_OF_WORDS
-import com.brosedda.mymediary.data.SCORE_INCREASE
-import com.brosedda.mymediary.data.allWords
-import com.brosedda.mymediary.ui.state.GameUiState
+import com.brosedda.mymediary.tutorials.unscramble.data.MAX_NO_OF_WORDS
+import com.brosedda.mymediary.tutorials.unscramble.data.SCORE_INCREASE
+import com.brosedda.mymediary.tutorials.unscramble.data.allWords
+import com.brosedda.mymediary.tutorials.unscramble.ui.state.GameUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

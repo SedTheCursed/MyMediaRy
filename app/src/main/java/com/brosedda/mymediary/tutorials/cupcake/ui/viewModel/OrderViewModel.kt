@@ -1,7 +1,7 @@
-package com.brosedda.mymediary.ui.viewModel
+package com.brosedda.mymediary.tutorials.cupcake.ui.viewModel
 
 import androidx.lifecycle.ViewModel
-import com.brosedda.mymediary.data.OrderUiState
+import com.brosedda.mymediary.tutorials.cupcake.data.OrderUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

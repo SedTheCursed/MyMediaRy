@@ -1,5 +1,15 @@
 <resources>
     <string name="app_name">MyMediaRy</string>
+    <string name="title_activity_main">ProfileActivity</string>
+
+    <!-- Profile -->
+    <string name="add_profile">Ajouter un profil</string>
+    <string name="choose_avatar">Choisir un avatar</string>
+    <string name="login">Se connecter</string>
+    <string name="password">Mot de passe</string>
+    <string name="show_password">Montrer le mot de passe</string>
+    <string name="hide_password">Cacher le mot de passe</string>
+    <string name="incorrect_password">Mot de passe incorrecte</string>
 
     <!-- WoofActivity -->
     <string name="title_activity_woof">WoofActivity</string>

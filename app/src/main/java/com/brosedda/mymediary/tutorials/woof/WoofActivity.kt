@@ -1,4 +1,4 @@
-package com.brosedda.mymediary
+package com.brosedda.mymediary.tutorials.woof
 
 import android.content.res.Configuration
 import android.os.Bundle
@@ -47,8 +47,9 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import com.brosedda.mymediary.data.Dog
-import com.brosedda.mymediary.data.dogs
+import com.brosedda.mymediary.R
+import com.brosedda.mymediary.tutorials.woof.data.Dog
+import com.brosedda.mymediary.tutorials.woof.data.dogs
 import com.brosedda.mymediary.ui.theme.MyMediaRyTheme
 
 class WoofActivity : ComponentActivity() {

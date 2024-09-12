@@ -1,4 +1,4 @@
-package com.brosedda.mymediary.ui
+package com.brosedda.mymediary.tutorials.cupcake.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -23,7 +23,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.brosedda.mymediary.R
-import com.brosedda.mymediary.ui.components.FormattedPriceLabel
+import com.brosedda.mymediary.tutorials.cupcake.ui.components.FormattedPriceLabel
 import com.brosedda.mymediary.ui.theme.MyMediaRyTheme
 
 /**

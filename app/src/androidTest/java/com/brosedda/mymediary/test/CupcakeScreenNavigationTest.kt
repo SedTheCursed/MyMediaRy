@@ -10,8 +10,8 @@ import androidx.compose.ui.test.performClick
 import androidx.navigation.compose.ComposeNavigator
 import androidx.navigation.testing.TestNavHostController
 import com.brosedda.mymediary.R
-import com.brosedda.mymediary.ui.CupcakeApp
-import com.brosedda.mymediary.ui.CupcakeScreen
+import com.brosedda.mymediary.tutorials.cupcake.ui.CupcakeApp
+import com.brosedda.mymediary.tutorials.cupcake.ui.CupcakeScreen
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test

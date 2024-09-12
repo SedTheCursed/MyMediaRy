@@ -25,11 +25,11 @@ val Typography = Typography(
     displayLarge = TextStyle(
         fontFamily = Metamorphous,
         fontWeight = FontWeight.Normal,
-        fontSize = 36.sp
+        fontSize = 24.sp
     ),
     displayMedium = TextStyle(
         fontFamily = Metamorphous,
-        fontWeight = FontWeight.Bold,
+        fontWeight = FontWeight.Normal,
         fontSize = 20.sp
     ),
     labelSmall = TextStyle(

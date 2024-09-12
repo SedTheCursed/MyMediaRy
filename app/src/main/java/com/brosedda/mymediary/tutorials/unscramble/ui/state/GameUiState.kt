@@ -1,4 +1,4 @@
-package com.brosedda.mymediary.ui.state
+package com.brosedda.mymediary.tutorials.unscramble.ui.state
 
 data class GameUiState(
     val currentScrambledWord: String = "",

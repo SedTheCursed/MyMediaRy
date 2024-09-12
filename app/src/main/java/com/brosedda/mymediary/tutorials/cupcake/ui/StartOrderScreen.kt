@@ -1,4 +1,4 @@
-package com.brosedda.mymediary.ui
+package com.brosedda.mymediary.tutorials.cupcake.ui
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
@@ -23,8 +23,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.brosedda.mymediary.R
-import com.brosedda.mymediary.data.DataSource
-import com.brosedda.mymediary.data.QuantityOptions
+import com.brosedda.mymediary.tutorials.cupcake.data.DataSource
+import com.brosedda.mymediary.tutorials.cupcake.data.QuantityOptions
 import com.brosedda.mymediary.ui.theme.MyMediaRyTheme
 
 /**
