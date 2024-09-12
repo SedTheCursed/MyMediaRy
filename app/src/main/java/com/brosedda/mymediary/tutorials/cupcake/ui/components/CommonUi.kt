@@ -1,4 +1,4 @@
-package com.brosedda.mymediary.ui.components
+package com.brosedda.mymediary.tutorials.cupcake.ui.components
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text

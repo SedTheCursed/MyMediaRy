@@ -1,4 +1,4 @@
-package com.brosedda.mymediary.data
+package com.brosedda.mymediary.tutorials.woof.data
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes

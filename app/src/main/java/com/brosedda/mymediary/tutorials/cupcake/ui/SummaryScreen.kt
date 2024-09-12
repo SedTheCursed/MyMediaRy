@@ -1,4 +1,4 @@
-package com.brosedda.mymediary.ui
+package com.brosedda.mymediary.tutorials.cupcake.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -21,8 +21,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import com.brosedda.mymediary.R
-import com.brosedda.mymediary.data.OrderUiState
-import com.brosedda.mymediary.ui.components.FormattedPriceLabel
+import com.brosedda.mymediary.tutorials.cupcake.data.OrderUiState
+import com.brosedda.mymediary.tutorials.cupcake.ui.components.FormattedPriceLabel
 import com.brosedda.mymediary.ui.theme.MyMediaRyTheme
 
 /**
@@ -111,7 +111,7 @@ fun OrderSummaryPreview() {
     MyMediaRyTheme {
         OrderSummaryScreen(
             orderUiState = OrderUiState(0, "Test", "Test", "$300.00"),
-            onSendButtonClicked = { subject: String, summary: String -> },
+            onSendButtonClicked = { _, _ -> },
             onCancelButtonClicked = {},
             modifier = Modifier.fillMaxHeight()
         )

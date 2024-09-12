@@ -13,30 +13,33 @@
         android:theme="@style/Theme.MyMediaRy"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".UserActivity"
             android:exported="true"
-            android:theme="@style/Theme.MyMediaRy" />
-        <activity
-            android:name=".WoofActivity"
-            android:exported="false"
-            android:label="@string/title_activity_woof"
-            android:theme="@style/Theme.MyMediaRy" />
-<!--        <activity-->
-<!--            android:name=".UnscrambleActivity"-->
-<!--            android:exported="false"-->
-<!--            android:label="@string/title_activity_unscramble"-->
-<!--            android:theme="@style/Theme.MyMediaRy" />-->
-        <activity
-            android:name=".CupcakeActivity"
-            android:exported="true"
-            android:label="@string/title_activity_cupcake"
             android:theme="@style/Theme.MyMediaRy">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.MyMediaRy" />
+        <activity
+            android:name=".tutorials.woof.WoofActivity"
+            android:exported="false"
+            android:label="@string/title_activity_woof"
+            android:theme="@style/Theme.MyMediaRy" /> <!-- <activity -->
+        <!-- android:name=".tutorials.unscramble.UnscrambleActivity" -->
+        <!-- android:exported="false" -->
+        <!-- android:label="@string/title_activity_unscramble" -->
+        <!-- android:theme="@style/Theme.MyMediaRy" /> -->
+        <activity
+            android:name=".tutorials.cupcake.CupcakeActivity"
+            android:exported="true"
+            android:label="@string/title_activity_cupcake"
+            android:theme="@style/Theme.MyMediaRy" />
     </application>
 
 </manifest>

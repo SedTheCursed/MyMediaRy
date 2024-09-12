@@ -1,4 +1,4 @@
-package com.brosedda.mymediary.ui
+package com.brosedda.mymediary.tutorials.unscramble.ui
 
 import android.app.Activity
 import androidx.compose.foundation.background
@@ -42,7 +42,7 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.brosedda.mymediary.R
 import com.brosedda.mymediary.ui.theme.MyMediaRyTheme
-import com.brosedda.mymediary.ui.viewModel.GameViewModel
+import com.brosedda.mymediary.tutorials.unscramble.ui.viewModel.GameViewModel
 
 @Composable
 fun GameScreen(
@@ -239,7 +239,6 @@ private fun FinalScoreDialog(
 @Preview(showBackground = true)
 @Composable
 fun GameScreenPreview() {
-
     MyMediaRyTheme {
         GameScreen()
     }

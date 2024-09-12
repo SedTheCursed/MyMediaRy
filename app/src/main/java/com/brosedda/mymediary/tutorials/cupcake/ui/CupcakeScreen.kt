@@ -1,4 +1,4 @@
-package com.brosedda.mymediary.ui
+package com.brosedda.mymediary.tutorials.cupcake.ui
 
 import android.content.Context
 import android.content.Intent
@@ -30,8 +30,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.brosedda.mymediary.R
-import com.brosedda.mymediary.data.DataSource
-import com.brosedda.mymediary.ui.viewModel.OrderViewModel
+import com.brosedda.mymediary.tutorials.cupcake.data.DataSource
+import com.brosedda.mymediary.tutorials.cupcake.ui.viewModel.OrderViewModel
 
 enum class CupcakeScreen(@StringRes val title: Int) {
     Start(R.string.app_name),
@@ -161,7 +161,7 @@ private fun cancelOrderAndNavigateToStart(
     navController: NavHostController
 ) {
    viewModel.resetOrder()
-   navController.popBackStack(CupcakeScreen.Start.name, false) 
+   navController.popBackStack(CupcakeScreen.Start.name, false)
 }
 
 private fun shareOrder(context: Context, subject: String, summary: String) {
