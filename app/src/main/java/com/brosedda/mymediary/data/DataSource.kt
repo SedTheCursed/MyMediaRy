@@ -11,7 +11,7 @@ object DataSource {
             avatar = R.drawable.ic_woof_logo
         ),
         User(
-            name = "Anne Nonyme"
+            name = "Anne Onyme"
         )
     )
 }

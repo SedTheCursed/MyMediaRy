@@ -23,16 +23,16 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_main"
             android:theme="@style/Theme.MyMediaRy" />
         <activity
             android:name=".tutorials.woof.WoofActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_woof"
             android:theme="@style/Theme.MyMediaRy" /> <!-- <activity -->
         <!-- android:name=".tutorials.unscramble.UnscrambleActivity" -->
-        <!-- android:exported="false" -->
+        <!-- android:exported="true" -->
         <!-- android:label="@string/title_activity_unscramble" -->
         <!-- android:theme="@style/Theme.MyMediaRy" /> -->
         <activity
