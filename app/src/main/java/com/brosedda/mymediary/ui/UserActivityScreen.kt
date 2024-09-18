@@ -5,18 +5,11 @@ import android.content.Intent
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme.colorScheme
-import androidx.compose.material3.MaterialTheme.typography
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -34,6 +27,8 @@ import androidx.navigation.compose.rememberNavController
 import com.brosedda.mymediary.MainActivity
 import com.brosedda.mymediary.R
 import com.brosedda.mymediary.data.model.User
+import com.brosedda.mymediary.ui.components.appBar.UserAppBar
+import com.brosedda.mymediary.ui.screens.users.CreationScreen
 import com.brosedda.mymediary.ui.screens.users.LoginScreen
 import com.brosedda.mymediary.ui.screens.users.ProfilesScreen
 import com.brosedda.mymediary.ui.theme.MyMediaRyTheme
@@ -44,6 +39,17 @@ enum class UsersRoute(@StringRes val title:Int? = null) {
     Login,
     Create(R.string.add_profile),
     Avatar(R.string.choose_avatar)
+}
+
+private fun goToMainApp(context: Context, navController: NavHostController, user: User) {
+    val intent = Intent(context, MainActivity::class.java).apply {
+        putExtra("NAME", user.name)
+        putExtra("PASSWORD", user.password)
+        putExtra("AVATAR", user.avatar)
+    }
+
+    navController.popBackStack(UsersRoute.Start.name, true)
+    context.startActivity(intent)
 }
 
 @Composable
@@ -62,7 +68,9 @@ fun UserApp(
                 UserAppBar(
                     currentScreen = currentScreen,
                     canNavigateBack = navController.previousBackStackEntry != null,
-                    navigateUp = { navController.navigateUp() }
+                    navigateUp = {
+                        navController.navigateUp()
+                    }
                 )
             }
         },
@@ -89,6 +97,7 @@ fun UserApp(
                             navController.navigate(UsersRoute.Login.name)
                         },
                         navigateToCreation = {
+                            viewModel.setCurrentUser(user = User(""))
                             navController.navigate(UsersRoute.Create.name)
                         }
                     )
@@ -96,7 +105,7 @@ fun UserApp(
 
                 composable(route = UsersRoute.Login.name) {
                     val context = LocalContext.current
-                    val user = uiState.currentUser!!
+                    val user = uiState.currentUser
 
                     if (user.password == null) goToMainApp(context, navController, user)
 
@@ -109,71 +118,25 @@ fun UserApp(
                 }
 
                 composable(route = UsersRoute.Create.name) {
-                    Text(
-                        currentScreen.title?.let {stringResource(currentScreen.title)}
-                            ?: ""
-                    )
+                   CreationScreen(
+                       users = uiState.users.map { it.name },
+                       avatar = uiState.currentUser.avatar,
+                       chooseAvatar = { navController.navigate(UsersRoute.Avatar.name) },
+                       addProfile = { name: String, password: String? ->
+                           viewModel.addProfile(name, password)
+                           navController.navigate(UsersRoute.Start.name)
+                       }
+                   )
                 }
 
                 composable(route = UsersRoute.Avatar.name) {
-                    Text(
-                        currentScreen.title?.let {stringResource(currentScreen.title)}
-                            ?: ""
-                    )
+                   Button(
+                       onClick = { navController.navigateUp() }
+                   ) { Text(stringResource(R.string.choose_avatar)) }
                 }
             }
         }
     }
-}
-
-/**
- * Composable that displays the topBar and displays back button if back navigation is possible.
- */
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun UserAppBar(
-    currentScreen: UsersRoute,
-    canNavigateBack: Boolean,
-    navigateUp: () -> Unit,
-    modifier: Modifier = Modifier
-) {
-    TopAppBar(
-        title = {
-            if (currentScreen.title != null) {
-                Text(
-                    text = stringResource(id = currentScreen.title),
-                    color = colorScheme.onPrimary,
-                    style = typography.displayLarge
-                )
-            }
-        },
-        colors = TopAppBarDefaults.mediumTopAppBarColors(
-            containerColor = colorScheme.primary
-        ),
-        modifier = modifier,
-        navigationIcon = {
-            if (canNavigateBack) {
-                IconButton(onClick = navigateUp) {
-                    Icon(
-                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                        contentDescription = stringResource(R.string.back_button),
-                        tint = colorScheme.onPrimary
-                    )
-                }
-            }
-        }
-    )
-}
-
-private fun goToMainApp(context: Context, navController: NavHostController, user: User) {
-    val intent = Intent(context, MainActivity::class.java).apply {
-        putExtra("NAME", user.name)
-        putExtra("PASSWORD", user.password)
-        putExtra("AVATAR", user.avatar)
-    }
-
-    navController.popBackStack(UsersRoute.Start.name, true)
-    context.startActivity(intent)
 }
 
 @Preview(showSystemUi = true)
