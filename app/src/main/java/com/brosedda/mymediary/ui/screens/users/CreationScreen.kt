@@ -106,7 +106,20 @@ fun CreationScreen(
                         vm.checkPassword()
                     }
                 ),
-                noBottomMargin = true
+                noBottomMargin = true,
+                onFocusLost = {
+                    if (!vm.checkOnTheFly) {
+                        when {
+                            it.hasFocus -> vm.setConfirmationFocus(true)
+                            vm.isConfirmationFocused -> {
+                                vm.setConfirmationFocus(false)
+                                vm.activateCheckPassword()
+                                vm.checkPassword()
+                            }
+                            else -> {}
+                        }
+                    }
+                }
             )
 
             Row(

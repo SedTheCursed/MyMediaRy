@@ -78,6 +78,7 @@
     <string name="used_name">Il y a déjà un profil avec ce nom</string>
     <string name="mandatory_name">Veuillez donner un nom de profil</string>
     <string name="choose_avatar">Choisir un avatar</string>
+    <string name="choose_the_avatar">Choisir l\'avatar</string>
     <string name="password">Mot de passe</string>
     <string name="password_confirmation">Retaper le mot de passe</string>
     <string name="no_password">Pas de mot de passe</string>
