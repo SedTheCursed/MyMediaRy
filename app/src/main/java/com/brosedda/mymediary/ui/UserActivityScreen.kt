@@ -5,18 +5,15 @@ import android.content.Intent
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
@@ -28,6 +25,7 @@ import com.brosedda.mymediary.MainActivity
 import com.brosedda.mymediary.R
 import com.brosedda.mymediary.data.model.User
 import com.brosedda.mymediary.ui.components.appBar.UserAppBar
+import com.brosedda.mymediary.ui.screens.users.AvatarSelectionScreen
 import com.brosedda.mymediary.ui.screens.users.CreationScreen
 import com.brosedda.mymediary.ui.screens.users.LoginScreen
 import com.brosedda.mymediary.ui.screens.users.ProfilesScreen
@@ -130,9 +128,12 @@ fun UserApp(
                 }
 
                 composable(route = UsersRoute.Avatar.name) {
-                   Button(
-                       onClick = { navController.navigateUp() }
-                   ) { Text(stringResource(R.string.choose_avatar)) }
+                    AvatarSelectionScreen (
+                        chooseAvatar = { avatar ->
+                            viewModel.setAvatar(avatar)
+                            navController.navigateUp()
+                        }
+                    )
                 }
             }
         }
