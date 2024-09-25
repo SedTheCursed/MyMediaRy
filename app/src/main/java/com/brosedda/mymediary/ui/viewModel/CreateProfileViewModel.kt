@@ -30,10 +30,13 @@ class CreateProfileViewModel: ViewModel() {
     var doesMatch by mutableStateOf(true)
         private set
 
-    var checkOntheFly by mutableStateOf(false)
+    var checkOnTheFly by mutableStateOf(false)
         private set
 
     var isValid by mutableStateOf(false)
+        private set
+
+    var isConfirmationFocused by mutableStateOf(false)
         private set
 
     private var nameGotFocus = false
@@ -48,14 +51,22 @@ class CreateProfileViewModel: ViewModel() {
 
     fun updatePassword(input: String) {
         password = input
-        if (checkOntheFly) checkPassword(password = input)
+        if (checkOnTheFly) checkPassword(password = input)
         checkValidity()
     }
 
     fun updateConfirmation(input: String) {
         confirmation = input
-        if (checkOntheFly) checkPassword(confirmation = input)
+        if (checkOnTheFly) checkPassword(confirmation = input)
         checkValidity()
+    }
+
+    fun activateCheckPassword() {
+        checkOnTheFly = true
+    }
+
+    fun setConfirmationFocus(b: Boolean) {
+        isConfirmationFocused = b
     }
 
     fun toggleVisibility() {
@@ -76,10 +87,6 @@ class CreateProfileViewModel: ViewModel() {
         checkValidity()
     }
 
-    fun activateCheckPassword() {
-        checkOntheFly = true
-    }
-
     fun validateAndCreateProfile(action: (String, String?) -> Unit) {
         val pwd = if (!withPassword || password.trim().isEmpty()) null else password
         action(name, pwd)
@@ -87,7 +94,7 @@ class CreateProfileViewModel: ViewModel() {
 
     private fun checkValidity() {
         val nameValidity = !(isNameUsed || isNameEmpty) && nameGotFocus
-        val passwordValidity = !withPassword || (checkOntheFly && doesMatch)
+        val passwordValidity = !withPassword || (checkOnTheFly && doesMatch)
 
         isValid = nameValidity && passwordValidity
     }
@@ -97,6 +104,7 @@ class CreateProfileViewModel: ViewModel() {
         confirmation = ""
         isPasswordVisible = false
         doesMatch = true
-        checkOntheFly = false
+        checkOnTheFly = false
+        isConfirmationFocused = false
     }
 }

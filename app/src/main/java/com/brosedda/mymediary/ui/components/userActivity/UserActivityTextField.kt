@@ -16,6 +16,8 @@ import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.FocusState
+import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
@@ -36,9 +38,10 @@ fun UserActivityTextField(
     modifier: Modifier = Modifier,
     visualTransformation: VisualTransformation = VisualTransformation.None,
     enabled: Boolean = true,
-    trailingIcon: @Composable() (() -> Unit)? = null,
+    trailingIcon: @Composable (() -> Unit)? = null,
     keyboardActions: KeyboardActions = KeyboardActions.Default,
-    noBottomMargin: Boolean = false
+    noBottomMargin: Boolean = false,
+    onFocusLost: (FocusState) -> Unit = { }
 ) {
     TextField(
         value = value,
@@ -69,6 +72,7 @@ fun UserActivityTextField(
         modifier = modifier
             .fillMaxWidth()
             .padding(bottom = if (noBottomMargin) 0.dp else dimensionResource(R.dimen.padding_medium))
+            .onFocusChanged { onFocusLost(it) }
     )
 }
 
@@ -84,7 +88,8 @@ fun UserActivityPasswordField(
     modifier: Modifier = Modifier,
     keyboardActions: KeyboardActions = KeyboardActions.Default,
     enabled: Boolean = true,
-    noBottomMargin: Boolean = false
+    noBottomMargin: Boolean = false,
+    onFocusLost: (FocusState) -> Unit = {}
 ) {
     UserActivityTextField(
         value = value,
@@ -92,6 +97,7 @@ fun UserActivityPasswordField(
         isError = isError,
         labelText = labelText,
         imeAction = imeAction,
+        onFocusLost = onFocusLost,
         visualTransformation = when (isVisible) {
             true -> VisualTransformation.None
             false -> PasswordVisualTransformation()
