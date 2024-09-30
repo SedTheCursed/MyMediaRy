@@ -1,8 +1,8 @@
-package com.brosedda.mymediary.ui.test
+package com.brosedda.mymediary.tutorials.unscramble.ui.test
 
 import com.brosedda.mymediary.tutorials.unscramble.data.MAX_NO_OF_WORDS
 import com.brosedda.mymediary.tutorials.unscramble.data.SCORE_INCREASE
-import com.brosedda.mymediary.data.getUnscrambledWord
+import com.brosedda.mymediary.tutorials.unscramble.data.getUnscrambledWord
 import com.brosedda.mymediary.tutorials.unscramble.ui.viewModel.GameViewModel
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

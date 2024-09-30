@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.brosedda.mymediary.data
+package com.brosedda.mymediary.tutorials.unscramble.data
 
 const val MAX_NO_OF_WORDS = 10
 const val SCORE_INCREASE = 20

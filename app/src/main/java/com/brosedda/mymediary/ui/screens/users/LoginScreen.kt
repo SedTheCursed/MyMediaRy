@@ -26,7 +26,7 @@ import com.brosedda.mymediary.R
 import com.brosedda.mymediary.data.model.User
 import com.brosedda.mymediary.ui.components.userActivity.UserActivityPasswordField
 import com.brosedda.mymediary.ui.theme.MyMediaRyTheme
-import com.brosedda.mymediary.ui.viewModel.LoginViewModel
+import com.brosedda.mymediary.ui.viewModel.users.LoginViewModel
 
 private fun login(
     viewModel: LoginViewModel,

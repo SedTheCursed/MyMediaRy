@@ -1,4 +1,4 @@
-package com.brosedda.mymediary.test
+package com.brosedda.mymediary.tutorials.cupcake
 
 import androidx.activity.ComponentActivity
 import androidx.compose.ui.test.assertIsDisplayed
@@ -9,6 +9,7 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import com.brosedda.mymediary.tutorials.cupcake.ui.SelectOptionScreen
 import com.brosedda.mymediary.R
+import com.brosedda.mymediary.onNodeWithStringId
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test

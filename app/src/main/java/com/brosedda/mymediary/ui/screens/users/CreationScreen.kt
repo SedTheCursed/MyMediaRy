@@ -37,7 +37,7 @@ import com.brosedda.mymediary.ui.components.userActivity.ProfileItem
 import com.brosedda.mymediary.ui.components.userActivity.UserActivityPasswordField
 import com.brosedda.mymediary.ui.components.userActivity.UserActivityTextField
 import com.brosedda.mymediary.ui.theme.MyMediaRyTheme
-import com.brosedda.mymediary.ui.viewModel.CreateProfileViewModel
+import com.brosedda.mymediary.ui.viewModel.users.CreateProfileViewModel
 
 @Composable
 fun CreationScreen(
@@ -74,9 +74,12 @@ fun CreationScreen(
             UserActivityPasswordField(
                 value = vm.password,
                 onValueChange = { vm.updatePassword(it) },
-                isError = !vm.doesMatch,
+                isError = when (vm.doesMatch) {
+                    true, null -> false
+                    false -> true
+                },
                 labelText = when (vm.doesMatch) {
-                    true -> R.string.password
+                    true, null -> R.string.password
                     false -> R.string.not_matching_password
                 },
                 imeAction = ImeAction.Next,
@@ -92,28 +95,29 @@ fun CreationScreen(
                 value = vm.confirmation,
                 onValueChange = { vm.updateConfirmation(it) },
                 imeAction = ImeAction.Done,
-                isError = !vm.doesMatch,
+                isError = when (vm.doesMatch) {
+                    true, null -> false
+                    false -> true
+                },
                 isVisible = vm.isPasswordVisible,
                 enabled = vm.withPassword,
                 labelText = when (vm.doesMatch) {
-                    true -> R.string.password_confirmation
+                    true, null -> R.string.password_confirmation
                     false -> R.string.not_matching_password
                 },
                 toggleVisibility = { vm.toggleVisibility() },
                 keyboardActions = KeyboardActions(
                     onDone = {
-                        vm.activateCheckPassword()
                         vm.checkPassword()
                     }
                 ),
                 noBottomMargin = true,
                 onFocusLost = {
-                    if (!vm.checkOnTheFly) {
+                    if (vm.doesMatch == null) {
                         when {
                             it.hasFocus -> vm.setConfirmationFocus(true)
                             vm.isConfirmationFocused -> {
                                 vm.setConfirmationFocus(false)
-                                vm.activateCheckPassword()
                                 vm.checkPassword()
                             }
                             else -> {}

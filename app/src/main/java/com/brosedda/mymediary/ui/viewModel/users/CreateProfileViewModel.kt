@@ -1,4 +1,4 @@
-package com.brosedda.mymediary.ui.viewModel
+package com.brosedda.mymediary.ui.viewModel.users
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -27,10 +27,7 @@ class CreateProfileViewModel: ViewModel() {
     var isPasswordVisible by mutableStateOf(false)
         private set
 
-    var doesMatch by mutableStateOf(true)
-        private set
-
-    var checkOnTheFly by mutableStateOf(false)
+    var doesMatch: Boolean? by mutableStateOf(null)
         private set
 
     var isValid by mutableStateOf(false)
@@ -51,18 +48,12 @@ class CreateProfileViewModel: ViewModel() {
 
     fun updatePassword(input: String) {
         password = input
-        if (checkOnTheFly) checkPassword(password = input)
-        checkValidity()
+        if (doesMatch != null) checkPassword(password = input)
     }
 
     fun updateConfirmation(input: String) {
         confirmation = input
-        if (checkOnTheFly) checkPassword(confirmation = input)
-        checkValidity()
-    }
-
-    fun activateCheckPassword() {
-        checkOnTheFly = true
+        if (doesMatch != null) checkPassword(confirmation = input)
     }
 
     fun setConfirmationFocus(b: Boolean) {
@@ -94,7 +85,7 @@ class CreateProfileViewModel: ViewModel() {
 
     private fun checkValidity() {
         val nameValidity = !(isNameUsed || isNameEmpty) && nameGotFocus
-        val passwordValidity = !withPassword || (checkOnTheFly && doesMatch)
+        val passwordValidity = !withPassword || (doesMatch == true)
 
         isValid = nameValidity && passwordValidity
     }
@@ -103,8 +94,7 @@ class CreateProfileViewModel: ViewModel() {
         password = ""
         confirmation = ""
         isPasswordVisible = false
-        doesMatch = true
-        checkOnTheFly = false
+        doesMatch = null
         isConfirmationFocused = false
     }
 }
