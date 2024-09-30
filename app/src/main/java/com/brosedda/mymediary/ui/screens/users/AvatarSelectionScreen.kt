@@ -36,7 +36,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.brosedda.mymediary.R
 import com.brosedda.mymediary.ui.theme.MyMediaRyTheme
-import com.brosedda.mymediary.ui.viewModel.AvatarViewModel
+import com.brosedda.mymediary.ui.viewModel.users.AvatarViewModel
 
 @Composable
 fun AvatarSelectionScreen(

@@ -1,4 +1,4 @@
-package com.brosedda.mymediary.test
+package com.brosedda.mymediary
 
 import androidx.navigation.NavController
 import org.junit.Assert.assertEquals

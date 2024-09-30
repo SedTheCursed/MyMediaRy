@@ -1,4 +1,4 @@
-package com.brosedda.mymediary.test
+package com.brosedda.mymediary.tutorials.cupcake
 
 import android.icu.util.Calendar
 import androidx.activity.ComponentActivity
@@ -10,6 +10,8 @@ import androidx.compose.ui.test.performClick
 import androidx.navigation.compose.ComposeNavigator
 import androidx.navigation.testing.TestNavHostController
 import com.brosedda.mymediary.R
+import com.brosedda.mymediary.assertCurrentRouteName
+import com.brosedda.mymediary.onNodeWithStringId
 import com.brosedda.mymediary.tutorials.cupcake.ui.CupcakeApp
 import com.brosedda.mymediary.tutorials.cupcake.ui.CupcakeScreen
 import org.junit.Before

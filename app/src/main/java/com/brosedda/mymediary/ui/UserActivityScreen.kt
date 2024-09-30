@@ -30,7 +30,7 @@ import com.brosedda.mymediary.ui.screens.users.CreationScreen
 import com.brosedda.mymediary.ui.screens.users.LoginScreen
 import com.brosedda.mymediary.ui.screens.users.ProfilesScreen
 import com.brosedda.mymediary.ui.theme.MyMediaRyTheme
-import com.brosedda.mymediary.ui.viewModel.UserViewModel
+import com.brosedda.mymediary.ui.viewModel.users.UserViewModel
 
 enum class UsersRoute(@StringRes val title:Int? = null) {
     Start,

@@ -1,4 +1,4 @@
-package com.brosedda.mymediary.ui.viewModel
+package com.brosedda.mymediary.ui.viewModel.users
 
 import androidx.annotation.DrawableRes
 import androidx.compose.runtime.getValue

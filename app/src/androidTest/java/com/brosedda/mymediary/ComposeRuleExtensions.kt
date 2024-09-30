@@ -1,4 +1,4 @@
-package com.brosedda.mymediary.test
+package com.brosedda.mymediary
 
 import androidx.activity.ComponentActivity
 import androidx.annotation.StringRes
