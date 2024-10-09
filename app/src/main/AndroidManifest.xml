@@ -30,7 +30,8 @@
             android:name=".tutorials.woof.WoofActivity"
             android:exported="true"
             android:label="@string/title_activity_woof"
-            android:theme="@style/Theme.MyMediaRy" /> <!-- <activity -->
+            android:theme="@style/Theme.MyMediaRy" />
+        <!-- <activity -->
         <!-- android:name=".tutorials.unscramble.UnscrambleActivity" -->
         <!-- android:exported="true" -->
         <!-- android:label="@string/title_activity_unscramble" -->
@@ -40,6 +41,12 @@
             android:exported="true"
             android:label="@string/title_activity_cupcake"
             android:theme="@style/Theme.MyMediaRy" />
+        <activity
+            android:name=".tutorials.reply.ReplyActivity"
+            android:exported="true"
+            android:label="@string/title_activity_reply"
+            android:theme="@style/Theme.MyMediaRy">
+        </activity>
     </application>
 
 </manifest>
