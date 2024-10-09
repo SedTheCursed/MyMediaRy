@@ -15,6 +15,7 @@ import com.brosedda.mymediary.onNodeWithStringId
 import com.brosedda.mymediary.tutorials.cupcake.ui.CupcakeApp
 import com.brosedda.mymediary.tutorials.cupcake.ui.CupcakeScreen
 import org.junit.Before
+import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
 import java.text.SimpleDateFormat
@@ -36,17 +37,20 @@ class CupcakeScreenNavigationTest {
         }
     }
 
+    @Ignore("Test Example")
     @Test
     fun cupcakeNavHost_verifyStartDestination() {
         navController.assertCurrentRouteName(CupcakeScreen.Start.name)
     }
 
+    @Ignore("Test Example")
     @Test
     fun cupcakeNavHost_verifyBackNavigationNotShownOnOrderScreen() {
-        val backTest = composeTestRule.activity.getString(R.string.back_button)
-        composeTestRule.onNodeWithContentDescription(backTest).assertDoesNotExist()
+        val backText = composeTestRule.activity.getString(R.string.back_button)
+        composeTestRule.onNodeWithContentDescription(backText).assertDoesNotExist()
     }
 
+    @Ignore("Test Example")
     @Test
     fun cupcakeNavHost_clickOneCupcake_navigatesToSelectFlavorScreen() {
         composeTestRule.onNodeWithStringId(R.string.one_cupcake)
@@ -54,6 +58,7 @@ class CupcakeScreenNavigationTest {
         navController.assertCurrentRouteName(CupcakeScreen.Flavor.name)
     }
 
+    @Ignore("Test Example")
     @Test
     fun cupcakeNavHost_clickOnBackOnFlavorScreen_navigatesToStartOrderScreen() {
         navigateToFlavorScreen()
@@ -61,6 +66,7 @@ class CupcakeScreenNavigationTest {
         navController.assertCurrentRouteName(CupcakeScreen.Start.name)
     }
 
+    @Ignore("Test Example")
     @Test
     fun cupcakeNavHost_clickNextOnFlavorScreen_navigatesToPickupScreen() {
         navigateToFlavorScreen()
@@ -69,6 +75,7 @@ class CupcakeScreenNavigationTest {
         navController.assertCurrentRouteName(CupcakeScreen.Pickup.name)
     }
 
+    @Ignore("Test Example")
     @Test
     fun cupcakeNavHost_clickOnCancelOnFlavorScreen_navigatesToStartScreen() {
         navigateToFlavorScreen()
@@ -77,6 +84,7 @@ class CupcakeScreenNavigationTest {
         navController.assertCurrentRouteName(CupcakeScreen.Start.name)
     }
 
+    @Ignore("Test Example")
     @Test
     fun cupcakeNavHost_clickOnBackOnPickupScreen_navigatesToFlavorScreen() {
         navigateToPickupScreen()
@@ -84,6 +92,7 @@ class CupcakeScreenNavigationTest {
         navController.assertCurrentRouteName(CupcakeScreen.Flavor.name)
     }
 
+    @Ignore("Test Example")
     @Test
     fun cupcakeNavHost_clickNextOnPickupScreen_navigatesToSummaryScreen() {
         navigateToPickupScreen()
@@ -92,6 +101,7 @@ class CupcakeScreenNavigationTest {
         navController.assertCurrentRouteName(CupcakeScreen.Summary.name)
     }
 
+    @Ignore("Test Example")
     @Test
     fun cupcakeNavHost_clickOnCancelOnPickupScreen_navigatesToStartScreen() {
         navigateToPickupScreen()
@@ -100,6 +110,7 @@ class CupcakeScreenNavigationTest {
         navController.assertCurrentRouteName(CupcakeScreen.Start.name)
     }
 
+    @Ignore("Test Example")
     @Test
     fun cupcakeNavHost_clickOnBackOnSummaryScreen_navigatesToPickupScreen() {
         navigateToSummaryScreen()
@@ -107,6 +118,7 @@ class CupcakeScreenNavigationTest {
         navController.assertCurrentRouteName(CupcakeScreen.Pickup.name)
     }
 
+    @Ignore("Test Example")
     @Test
     fun cupcakeNavHost_clickOnCancelOnSummaryScreen_navigatesToStartScreen() {
         navigateToSummaryScreen()

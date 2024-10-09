@@ -65,13 +65,13 @@
     <string name="total_price">Total %s</string>
     <string name="new_cupcake_order">New Cupcake Order</string>
     <string name="order_details">Quantity: %1$s \nFlavor: %2$s \nPickup date: %3$s \nTotal: %4$s \n\nThank you!</string>
-    <string name="back_button">Back</string>
     <plurals name="cupcakes">
         <item quantity="one">%d cupcake</item>
         <item quantity="other">%d cupcakes</item>
     </plurals>
 
     <!-- Profile -->
+    <string name="back_button">Revenir en arrière</string>
     <string name="add_profile">Ajouter un profil</string>
     <string name="create_profile">Créer le profil</string>
     <string name="profile_name">Nom du profil</string>
@@ -88,4 +88,35 @@
     <string name="not_matching_password">Mots de passe non correspondants</string>
     <string name="login">Se connecter</string>
 
+    <!-- Avatar descriptions -->
+    <string name="avatar_primary">Personnage dans un cercle blanc sur un fond violet</string>
+    <string name="avatar_primary_inversed">Personnage dans un cercle violet sur un fond blanc</string>
+    <string name="avatar_secondary">Personnage dans un cercle blanc sur un fond vert</string>
+    <string name="avatar_secondary_inversed">Personnage dans un cercle vert sur un fond blanc</string>
+    <string name="avatar_tertiary">Personnage dans un cercle blanc sur un fond doré</string>
+    <string name="avatar_tertiary_inversed">Personnage dans un cercle doré sur un fond blanc</string>
+    <string name="multimedia_primary">Un livre, une note de musique et une manette blanches sur un fond violet</string>
+    <string name="multimedia_primary_inversed">Un livre, une note de musique et une manette violettes sur un fond blanc</string>
+    <string name="multimedia_secondary">Un livre, une note de musique et une manette blanches sur un fond vert</string>
+    <string name="multimedia_secondary_inversed">Un livre, une note de musique et une manette vertes sur un fond blanc</string>
+    <string name="multimedia_tertiary">Un livre, une note de musique et une manette blanches sur un fond doré</string>
+    <string name="multimedia_tertiary_inversed">Un livre, une note de musique et une manette dorées sur un fond blanc</string>
+    <string name="book_primary">Un livre blanc sur un fond violet</string>
+    <string name="book_primary_inversed">Un livre violet sur un fond blanc</string>
+    <string name="book_secondary">Un livre blanc sur un fond vert</string>
+    <string name="book_secondary_inversed">Un livre vert sur un fond blanc</string>
+    <string name="book_tertiary">Un livre blanc sur un fond doré</string>
+    <string name="book_tertiary_inversed">Un livre doré sur un fond blanc</string>
+    <string name="music_primary">Note de musique blanche sur un fond violet</string>
+    <string name="music_primary_inversed">Note de musique violette sur un fond blanc</string>
+    <string name="music_secondary">Note de musique blanche sur un fond vert</string>
+    <string name="music_secondary_inversed">Note de musique verte sur un fond blanc</string>
+    <string name="music_tertiary">Note de musique blanche sur un fond doré</string>
+    <string name="music_tertiary_inversed">Note de musique dorée sur un fond blanc</string>
+    <string name="videogames_primary">Manette de console blanche sur un fond violet</string>
+    <string name="videogames_primary_inversed">Manette de console violette sur un fond blanc</string>
+    <string name="videogames_secondary">Manette de console blanche sur un fond vert</string>
+    <string name="videogames_secondary_inversed">Manette de console verte sur un fond blanc</string>
+    <string name="videogames_tertiary">Manette de console blanche sur un fond doré</string>
+    <string name="videogames_tertiary_inversed">Manette de console dorée sur un fond blanc</string>
 </resources>

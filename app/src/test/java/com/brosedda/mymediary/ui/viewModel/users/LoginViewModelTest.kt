@@ -12,7 +12,7 @@ class LoginViewModelTest {
     private val password = "password"
 
     @Test
-    fun loginViewModel_ChangeVisibility_InverseIsVisibleValue() {
+    fun loginViewModel_changeVisibility_inverseIsVisibleValue() {
         viewModel.let {
             val initialVisibility = it.isVisible
             it.toggleVisibility()
@@ -22,14 +22,14 @@ class LoginViewModelTest {
     }
 
     @Test
-    fun loginViewModel_UserTypesSomething_TextFieldUpdatedWithTheInput() {
+    fun loginViewModel_userTypesSomething_textFieldUpdatedWithTheInput() {
         val input = "Word"
         viewModel.updateInput(input)
         assertEquals(input, viewModel.input)
     }
 
     @Test
-    fun loginViewModel_UserTypeTheRightPassword_IsWrongIsSetToFalse() {
+    fun loginViewModel_userTypeTheRightPassword_isWrongIsSetToFalse() {
         viewModel.updateInput("password")
         viewModel.checkPassword(password)
 
@@ -37,7 +37,7 @@ class LoginViewModelTest {
     }
 
     @Test
-    fun loginViewModel_UserTypeTheWrongPassword_IsWrongIsSetToTrue() {
+    fun loginViewModel_userTypeTheWrongPassword_isWrongIsSetToTrue() {
         viewModel.updateInput("PASSword")
         viewModel.checkPassword(password)
 

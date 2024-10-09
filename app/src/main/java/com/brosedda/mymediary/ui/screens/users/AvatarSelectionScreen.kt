@@ -1,6 +1,7 @@
 package com.brosedda.mymediary.ui.screens.users
 
 import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -28,6 +29,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -56,10 +58,11 @@ fun AvatarSelectionScreen(
             modifier = Modifier
                 .weight(1f)
         ) {
-            items(viewModel.avatars) { avatar ->
+            items(viewModel.avatars) { (avatar, description) ->
                 AvatarItem(
                     image = avatar,
                     select = { viewModel.selectAvatar(avatar) },
+                    description = description,
                     selected = viewModel.selected
                 )
             }
@@ -99,6 +102,7 @@ fun AvatarSelectionScreen(
 @Composable
 fun AvatarItem(
     @DrawableRes image: Int,
+    @StringRes description: Int,
     @DrawableRes selected: Int,
     select: () -> Unit,
     modifier: Modifier = Modifier
@@ -110,25 +114,27 @@ fun AvatarItem(
     ) {
         Image(
             painter = painterResource(image),
-            contentDescription = null,
+            contentDescription = stringResource(description),
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .size(80.dp)
                 .clip(shapes.small)
-                .sectionBorder(image == selected)
+                .selectionBorder(image == selected)
         )
     }
 }
 
 @Composable
-private fun Modifier.sectionBorder(condition: Boolean): Modifier {
+private fun Modifier.selectionBorder(condition: Boolean): Modifier {
     return when (condition) {
         false -> this
-        true -> this.border(
-            width =  7.dp,
-            color = colorScheme.primaryContainer,
-            shape = CircleShape
-        )
+        true -> this
+            .border(
+                width =  7.dp,
+                color = colorScheme.primaryContainer,
+                shape = CircleShape
+            )
+            .testTag("selected")
     }
 }
 

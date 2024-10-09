@@ -9,7 +9,7 @@ class AvatarViewModelTest {
     private val viewModel = AvatarViewModel()
 
     @Test
-    fun avatarViewModel_ImageChosen_selectedSetImageValue() {
+    fun avatarViewModel_imageChosen_selectedSetImageValue() {
         val image = R.drawable.add_circle
 
         viewModel.selectAvatar(image)
