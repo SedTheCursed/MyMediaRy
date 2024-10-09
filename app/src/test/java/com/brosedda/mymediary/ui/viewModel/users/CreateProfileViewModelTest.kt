@@ -20,7 +20,7 @@ class CreateProfileViewModelTest {
     }
 
     @Test
-    fun createProfileViewModel_ValueOfNameFieldChanged_NameTakesNewValue() {
+    fun createProfileViewModel_valueOfNameFieldChanged_nameTakesNewValue() {
         val input = "user"
         viewModel.updateName(input, users)
 
@@ -28,7 +28,7 @@ class CreateProfileViewModelTest {
     }
 
     @Test
-    fun createProfileViewModel_ValueOfNameFieldChangedToAlreadyExistingAccount_FlagNameHasUsed() {
+    fun createProfileViewModel_valueOfNameFieldChangedToAlreadyExistingAccount_flagNameHasUsed() {
         val input = "User"
         viewModel.updateName(input, users)
 
@@ -36,7 +36,7 @@ class CreateProfileViewModelTest {
     }
 
     @Test
-    fun createProfileViewModel_ValueOfNameFieldChangedFromAlreadyExistingAccount_FlagNameHasUnused() {
+    fun createProfileViewModel_valueOfNameFieldChangedFromAlreadyExistingAccount_flagNameHasUnused() {
         viewModel.updateName("Users", users)
         viewModel.updateName("Users1", users)
 
@@ -44,7 +44,7 @@ class CreateProfileViewModelTest {
     }
 
     @Test
-    fun createProfileViewModel_NameTextFieldIsEmpty_FlagNameHasEmpty() {
+    fun createProfileViewModel_nameTextFieldIsEmpty_flagNameHasEmpty() {
         val input = ""
         viewModel.updateName(input, users)
 
@@ -52,7 +52,7 @@ class CreateProfileViewModelTest {
     }
 
     @Test
-    fun createProfileViewModel_NameTextFieldContainsOnlyWhitespaces_FlagNameHasEmpty() {
+    fun createProfileViewModel_nameTextFieldContainsOnlyWhitespaces_flagNameHasEmpty() {
         val input = "     "
         viewModel.updateName(input, users)
 
@@ -60,7 +60,7 @@ class CreateProfileViewModelTest {
     }
 
     @Test
-    fun createProfileViewModel_ValueOfNameFieldChangedFromEmpty_FlagNameHasNotEmpty() {
+    fun createProfileViewModel_valueOfNameFieldChangedFromEmpty_flagNameHasNotEmpty() {
         viewModel.updateName("    ", users)
         viewModel.updateName("  S  ", users)
 
@@ -68,7 +68,7 @@ class CreateProfileViewModelTest {
     }
 
     @Test
-    fun createProfileViewModel_ValueOfPasswordFieldChanged_PasswordTakesNewValue() {
+    fun createProfileViewModel_valueOfPasswordFieldChanged_passwordTakesNewValue() {
         val input = "password"
         viewModel.updatePassword(input)
 
@@ -76,14 +76,14 @@ class CreateProfileViewModelTest {
     }
 
     @Test
-    fun createProfileViewModel_ModifyPasswordWhenCompareIsNotActive_DoNotCompare() {
+    fun createProfileViewModel_modifyPasswordWhenCompareIsNotActive_doNotCompare() {
         viewModel.updatePassword("password")
 
         assertNull(viewModel.doesMatch)
     }
 
     @Test
-    fun createProfileViewModel_ModifyPasswordWhenCompareIsActive_CheckIfPasswordAndConfirmationAreIdentical() {
+    fun createProfileViewModel_modifyPasswordWhenCompareIsActive_checkIfPasswordAndConfirmationAreIdentical() {
         viewModel.updateConfirmation("password")
         viewModel.updatePassword("passwor")
         viewModel.checkPassword()
@@ -95,7 +95,7 @@ class CreateProfileViewModelTest {
     }
 
     @Test
-    fun createProfileViewModel_ChangeVisibility_InverseIsVisibleValue() {
+    fun createProfileViewModel_changeVisibility_inverseIsVisibleValue() {
         viewModel.let {
             val initialVisibility = it.isPasswordVisible
             it.toggleVisibility()
@@ -105,7 +105,7 @@ class CreateProfileViewModelTest {
     }
 
     @Test
-    fun createProfileViewModel_ValueOfConfirmationFieldChanged_ConfirmationTakesNewValue() {
+    fun createProfileViewModel_valueOfConfirmationFieldChanged_confirmationTakesNewValue() {
         val input = "password"
         viewModel.updateConfirmation(input)
 
@@ -113,14 +113,14 @@ class CreateProfileViewModelTest {
     }
 
     @Test
-    fun createProfileViewModel_ModifyConfirmationWhenCompareIsNotActive_DoNotCompare() {
+    fun createProfileViewModel_modifyConfirmationWhenCompareIsNotActive_doNotCompare() {
         viewModel.updateConfirmation("password")
 
         assertNull(viewModel.doesMatch)
     }
 
     @Test
-    fun createProfileViewModel_ModifyConfirmationWhenCompareIsActive_CheckIfPasswordAndConfirmationAreIdentical() {
+    fun createProfileViewModel_modifyConfirmationWhenCompareIsActive_checkIfPasswordAndConfirmationAreIdentical() {
         viewModel.updatePassword("password")
         viewModel.updateConfirmation("passwor")
         viewModel.checkPassword()
@@ -132,7 +132,7 @@ class CreateProfileViewModelTest {
     }
 
     @Test
-    fun createProfileViewModel_ChangePasswordUsage_PasswordReinitialisedAndInverseWithPasswordValue() {
+    fun createProfileViewModel_changePasswordUsage_passwordReinitialisedAndInverseWithPasswordValue() {
         viewModel.let {
             it.togglePassword()
 
@@ -146,7 +146,7 @@ class CreateProfileViewModelTest {
     }
 
     @Test
-    fun createProfileViewModel_ChangingConfirmationFocus_SetIsConfirmationFocusedAccordingly() {
+    fun createProfileViewModel_changingConfirmationFocus_setIsConfirmationFocusedAccordingly() {
         viewModel.setConfirmationFocus(true)
         assertTrue(viewModel.isConfirmationFocused)
         viewModel.setConfirmationFocus(false)
@@ -154,21 +154,21 @@ class CreateProfileViewModelTest {
     }
 
     @Test
-    fun createProfileViewModel_PasswordAndConfirmationAreIdentical_DoesMatchSetTrue() {
+    fun createProfileViewModel_passwordAndConfirmationAreIdentical_doesMatchSetTrue() {
         viewModel.checkPassword("password", "password")
 
         viewModel.doesMatch?.let { assertTrue(it) }
     }
 
     @Test
-    fun createProfileViewModel_PasswordAndConfirmationAreNotIdentical_DoesMatchSetFalse() {
+    fun createProfileViewModel_passwordAndConfirmationAreNotIdentical_doesMatchSetFalse() {
         viewModel.checkPassword("password", "passwor")
 
         viewModel.doesMatch?.let { assertFalse(it) }
     }
 
     @Test
-    fun createProfileViewModel_NameIsValidAndPasswordMatch_FormSetValid() {
+    fun createProfileViewModel_nameIsValidAndPasswordMatch_formSetValid() {
         viewModel.updateName("New User", users)
         viewModel.checkPassword("password", "password")
 
@@ -176,7 +176,7 @@ class CreateProfileViewModelTest {
     }
 
     @Test
-    fun createProfileViewModel_NameIsValidAndNoPassword_FormSetValid() {
+    fun createProfileViewModel_nameIsValidAndNoPassword_formSetValid() {
         viewModel.updateName("New User", users)
         viewModel.togglePassword()
 
@@ -184,7 +184,7 @@ class CreateProfileViewModelTest {
     }
 
     @Test
-    fun createProfileViewModel_NameIsUsedAndPasswordMatch_FormSetNotValid() {
+    fun createProfileViewModel_nameIsUsedAndPasswordMatch_formSetNotValid() {
         viewModel.updateName("User", users)
         viewModel.checkPassword("password", "password")
 
@@ -192,7 +192,7 @@ class CreateProfileViewModelTest {
     }
 
     @Test
-    fun createProfileViewModel_NameIsEmptyAndPasswordMatch_FormSetNotValid() {
+    fun createProfileViewModel_nameIsEmptyAndPasswordMatch_formSetNotValid() {
         viewModel.updateName("", users)
         viewModel.checkPassword("password", "password")
 
@@ -200,21 +200,21 @@ class CreateProfileViewModelTest {
     }
 
     @Test
-    fun createProfileViewModel_NameNeverFocusedAndPasswordMatch_FormSetNotValid() {
+    fun createProfileViewModel_nameNeverFocusedAndPasswordMatch_formSetNotValid() {
         viewModel.checkPassword("password", "password")
 
         assertFalse(viewModel.isValid)
     }
 
     @Test
-    fun createProfileViewModel_NameIsValidAndPasswordHasNotBeenChecked_FormSetNotValid() {
+    fun createProfileViewModel_nameIsValidAndPasswordHasNotBeenChecked_formSetNotValid() {
         viewModel.updateName("New User", users)
 
         assertFalse(viewModel.isValid)
     }
 
     @Test
-    fun createProfileViewModel_NameIsValidAndPasswordNotMatching_FormSetNotValid() {
+    fun createProfileViewModel_nameIsValidAndPasswordNotMatching_formSetNotValid() {
         viewModel.updateName("New User", users)
         viewModel.checkPassword("pass", "word")
 
@@ -222,7 +222,7 @@ class CreateProfileViewModelTest {
     }
 
     @Test
-    fun createProfileViewModel_FormSentWithPassword_ActionIsCalledWithPassword() {
+    fun createProfileViewModel_formSentWithPassword_actionIsCalledWithPassword() {
         viewModel.updateName("User", users)
         viewModel.updatePassword("password")
         viewModel.validateAndCreateProfile(createUser)
@@ -232,7 +232,7 @@ class CreateProfileViewModelTest {
     }
 
     @Test
-    fun createProfileViewModel_FormSentWithoutPassword_ActionIsCalledWithNull() {
+    fun createProfileViewModel_formSentWithoutPassword_actionIsCalledWithNull() {
         viewModel.updateName("User", users)
         viewModel.togglePassword()
         viewModel.validateAndCreateProfile(createUser)
@@ -242,7 +242,7 @@ class CreateProfileViewModelTest {
     }
 
     @Test
-    fun createProfileViewModel_FormSentWithEmptyPassword_ActionIsCalledWithNull() {
+    fun createProfileViewModel_formSentWithEmptyPassword_actionIsCalledWithNull() {
         viewModel.updateName("User", users)
         viewModel.updatePassword(" ")
         viewModel.validateAndCreateProfile(createUser)

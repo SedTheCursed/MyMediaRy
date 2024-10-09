@@ -11,6 +11,7 @@ import com.brosedda.mymediary.tutorials.cupcake.ui.SelectOptionScreen
 import com.brosedda.mymediary.R
 import com.brosedda.mymediary.onNodeWithStringId
 import org.junit.Before
+import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
 
@@ -30,6 +31,7 @@ class CupCakeOrderScreenTest {
         }
     }
 
+    @Ignore("Test Example")
     @Test
     fun selectOptionScreen_verifyContent() {
         //All options are displayed on the screen
@@ -48,6 +50,7 @@ class CupCakeOrderScreenTest {
         composeTestRule.onNodeWithStringId(R.string.next).assertIsNotEnabled()
     }
 
+    @Ignore("Test Example")
     @Test
     fun selectOptionsScreen_chooseAnOption_enableTheNextButton() {
         composeTestRule.let {

@@ -11,7 +11,7 @@ class UserViewModelTest {
     private val viewModel = UserViewModel()
 
     @Test
-    fun userViewModel_UserChosen_CurrentUserIsSet() {
+    fun userViewModel_userChosen_currentUserIsSet() {
         val user = User(
             name = "User",
             password = "password"
@@ -26,7 +26,7 @@ class UserViewModelTest {
     }
 
     @Test
-    fun userViewModel_ProfileAvatarChosen_CurrentUserAvatarIsSet() {
+    fun userViewModel_profileAvatarChosen_currentUserAvatarIsSet() {
         viewModel.setAvatar(R.drawable.avatar_primary)
         val avatar = viewModel.uiState.value.currentUser.avatar
 
@@ -34,7 +34,7 @@ class UserViewModelTest {
     }
 
     @Test
-    fun userViewModel_ProfileWithPasswordCreated_NewProfileAddedToProfileList() {
+    fun userViewModel_profileWithPasswordCreated_newProfileAddedToProfileList() {
         val numberOfProfile = viewModel.uiState.value.users.size
         viewModel.addProfile("user", "password")
 
@@ -48,7 +48,7 @@ class UserViewModelTest {
     }
 
     @Test
-    fun userViewModel_ProfileWithoutPasswordCreated_NewProfileAddedToProfileList() {
+    fun userViewModel_profileWithoutPasswordCreated_newProfileAddedToProfileList() {
         viewModel.addProfile("user", null)
 
         viewModel.uiState.value.users.let {

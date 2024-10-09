@@ -10,7 +10,7 @@ import com.brosedda.mymediary.data.avatars as avatarsSrc
 class AvatarViewModel: ViewModel() {
     val avatars = avatarsSrc
 
-    var selected by mutableIntStateOf(avatars[0])
+    var selected by mutableIntStateOf(avatars[0].first)
     private set
 
     fun selectAvatar(@DrawableRes avatar: Int) {
