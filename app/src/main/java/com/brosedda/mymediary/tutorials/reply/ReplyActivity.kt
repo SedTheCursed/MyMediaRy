@@ -11,6 +11,9 @@ import androidx.compose.foundation.layout.calculateStartPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.material3.Surface
+import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
+import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLayoutDirection
@@ -19,6 +22,7 @@ import com.brosedda.mymediary.tutorials.reply.ui.ReplyApp
 import com.brosedda.mymediary.ui.theme.MyMediaRyTheme
 
 class ReplyActivity: ComponentActivity() {
+    @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
@@ -34,7 +38,8 @@ class ReplyActivity: ComponentActivity() {
                                 .calculateEndPadding(layoutDirection)
                         )
                 ) {
-                    ReplyApp()
+                    val windowSize = calculateWindowSizeClass(this)
+                    ReplyApp(windowSize.widthSizeClass)
                 }
             }
         }
@@ -46,7 +51,27 @@ class ReplyActivity: ComponentActivity() {
 fun ReplyAppCompactPreview() {
     MyMediaRyTheme {
         Surface {
-            ReplyApp()
+            ReplyApp(WindowWidthSizeClass.Compact)
+        }
+    }
+}
+
+@Preview(showBackground = true, widthDp = 700)
+@Composable
+fun ReplyAppCompactMediumPreview() {
+    MyMediaRyTheme {
+        Surface {
+            ReplyApp(WindowWidthSizeClass.Medium)
+        }
+    }
+}
+
+@Preview(showBackground = true, widthDp = 1000)
+@Composable
+fun ReplyAppCompactExpandedPreview() {
+    MyMediaRyTheme {
+        Surface {
+            ReplyApp(WindowWidthSizeClass.Expanded)
         }
     }
 }
