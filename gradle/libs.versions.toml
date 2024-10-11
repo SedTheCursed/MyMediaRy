@@ -6,9 +6,9 @@ junit = "4.13.2"
 junitVersion = "1.2.1"
 espresso = "3.6.1"
 activityCompose = "1.9.2"
-composeBom = "2024.09.02"
+composeBom = "2024.09.03"
 lifecycle = "2.8.6"
-navigation = "2.8.1"
+navigation = "2.8.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -31,6 +31,7 @@ navigation-compose = { group = "androidx.navigation", name = "navigation-compose
 navigation-testing = { group = "androidx.navigation", name = "navigation-testing", version.ref = "navigation"}
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
 espresso-intents = { group = "androidx.test.espresso", name = "espresso-intents", version.ref = "espresso" }
+window-size = { group = "androidx.compose.material3", name = "material3-window-size-class" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
