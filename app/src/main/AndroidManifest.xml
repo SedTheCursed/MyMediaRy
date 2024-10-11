@@ -45,8 +45,12 @@
             android:name=".tutorials.reply.ReplyActivity"
             android:exported="true"
             android:label="@string/title_activity_reply"
-            android:theme="@style/Theme.MyMediaRy">
-        </activity>
+            android:theme="@style/Theme.MyMediaRy" />
+        <activity
+            android:name=".tutorials.race.RaceActivity"
+            android:exported="true"
+            android:label="@string/title_activity_race"
+            android:theme="@style/Theme.MyMediaRy" />
     </application>
 
 </manifest>
