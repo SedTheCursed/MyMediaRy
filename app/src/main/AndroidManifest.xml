@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    
     <application
+        android:name=".MyMediaRyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -52,5 +55,26 @@
             android:label="@string/title_activity_race"
             android:theme="@style/Theme.MyMediaRy" />
     </application>
-
+<!--    Mars Manifest-->
+<!--    <application -->
+<!--        android:name=".tutorials.mars.MarsApplication"-->
+<!--        android:allowBackup="true"-->
+<!--        android:dataExtractionRules="@xml/data_extraction_rules"-->
+<!--        android:fullBackupContent="@xml/backup_rules"-->
+<!--        android:icon="@mipmap/ic_launcher"-->
+<!--        android:label="@string/title_activity_mars"-->
+<!--        android:roundIcon="@mipmap/ic_launcher_round"-->
+<!--        android:supportsRtl="true"-->
+<!--        android:theme="@style/Theme.MyMediaRy"-->
+<!--        tools:targetApi="31"> -->
+<!--        <activity-->
+<!--            android:name=".tutorials.mars.MarsActivity"-->
+<!--            android:exported="true"-->
+<!--            android:theme="@style/Theme.MyMediaRy">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+<!--    </application>-->
 </manifest>

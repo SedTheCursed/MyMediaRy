@@ -238,6 +238,14 @@
     <string name="player_one_name">Player 1</string>
     <string name="player_two_name">Player 2</string>
 
+    <!-- Mars -->
+    <string name="title_activity_mars">Mars Photos</string>
+    <string name="loading_failed">Failed to load</string>
+    <string name="placeholder_result">Placeholder result text</string>
+    <string name="retry">Retry</string>
+    <string name="loading">Loading</string>
+    <string name="mars_photo">Mars photo</string>
+
     <!-- Profile -->
     <string name="back_button">Revenir en arrière</string>
     <string name="add_profile">Ajouter un profil</string>
