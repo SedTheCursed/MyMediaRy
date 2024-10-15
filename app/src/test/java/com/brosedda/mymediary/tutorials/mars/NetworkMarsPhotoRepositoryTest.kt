@@ -9,7 +9,7 @@ import org.junit.Test
 
 class NetworkMarsPhotoRepositoryTest {
     @Test
-    fun networkMarsRepository_getMarsPhotos_VerifyPhotoList() = runTest {
+    fun networkMarsRepository_getMarsPhotos_verifyPhotoList() = runTest {
         val repository = NetworkMarsPhotoRepository(
             marsApiService = FakeMarsApiService()
         )

@@ -7,6 +7,7 @@ import com.brosedda.mymediary.R
 import com.brosedda.mymediary.data.DataSource.users
 import com.brosedda.mymediary.onNodeWithStringId
 import com.brosedda.mymediary.ui.screens.users.ProfilesScreen
+import com.brosedda.mymediary.ui.state.UsersList
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -19,7 +20,7 @@ class ProfilesScreenTest {
     fun setupScreen() {
         composeTestRule.setContent {
             ProfilesScreen(
-                users,
+                UsersList.Success(users),
                 navigateToLogin = { _ -> },
                 navigateToCreation = { }
             )

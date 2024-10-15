@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -30,6 +29,7 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.brosedda.mymediary.R
 import com.brosedda.mymediary.tutorials.mars.network.MarsPhoto
+import com.brosedda.mymediary.ui.components.LoadingScreen
 import com.brosedda.mymediary.ui.theme.MyMediaRyTheme
 
 @Composable
@@ -47,18 +47,6 @@ fun HomeScreen(
         )
         is MarsUiState.Error -> ErrorScreen(retryAction, modifier = modifier.fillMaxSize())
     }
-}
-
-/**
- * Loading Screen display a loading animation
- */
-@Composable
-fun LoadingScreen(modifier: Modifier = Modifier) {
-    Image(
-        painter = painterResource(R.drawable.loading_img),
-        contentDescription = stringResource(R.string.loading),
-        modifier = modifier.size(200.dp)
-    )
 }
 
 ///**

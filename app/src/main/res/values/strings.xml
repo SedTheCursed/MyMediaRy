@@ -295,4 +295,5 @@
     <string name="videogames_secondary_inversed">Manette de console verte sur un fond blanc</string>
     <string name="videogames_tertiary">Manette de console blanche sur un fond doré</string>
     <string name="videogames_tertiary_inversed">Manette de console dorée sur un fond blanc</string>
+    <string name="users_not_found">Liste des profils inaccessible.</string>
 </resources>

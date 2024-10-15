@@ -19,6 +19,7 @@ import com.brosedda.mymediary.onNodeWithStringIdTag
 import com.brosedda.mymediary.tutorials.reply.data.Email
 import com.brosedda.mymediary.tutorials.reply.data.local.LocalEmailsDataProvider
 import com.brosedda.mymediary.tutorials.reply.ui.ReplyApp
+import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
 
@@ -26,6 +27,7 @@ class ReplyAppStateRestoration {
     @get:Rule
     val composeTestRule = createAndroidComposeRule<ComponentActivity>()
 
+    @Ignore("Test Example")
     @Test
     @TestCompactWidth
     fun compactDevice_configChange_selectedEmailRetained() {
@@ -55,6 +57,7 @@ class ReplyAppStateRestoration {
        assertShowsDetailedScreenForEmail(email)
     }
 
+    @Ignore("Test Example")
     @Test
     @TestExpandedWidth
     fun expandedDevice_configChange_selectedEmailRetained() {

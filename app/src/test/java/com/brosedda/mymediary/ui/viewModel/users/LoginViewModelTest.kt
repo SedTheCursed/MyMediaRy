@@ -1,6 +1,5 @@
-package com.brosedda.mymediary.ui.test
+package com.brosedda.mymediary.ui.viewModel.users
 
-import com.brosedda.mymediary.ui.viewModel.users.LoginViewModel
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotEquals

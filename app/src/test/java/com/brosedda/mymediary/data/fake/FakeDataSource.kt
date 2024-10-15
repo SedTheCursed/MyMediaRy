@@ -1,9 +1,9 @@
-package com.brosedda.mymediary.data
+package com.brosedda.mymediary.data.fake
 
 import com.brosedda.mymediary.R
 import com.brosedda.mymediary.data.model.User
 
-object DataSource {
+object FakeDataSource {
     val users: List<User> = listOf(
         User(
             name = "User",
