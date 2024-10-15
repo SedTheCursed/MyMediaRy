@@ -29,6 +29,7 @@ import com.brosedda.mymediary.ui.screens.users.AvatarSelectionScreen
 import com.brosedda.mymediary.ui.screens.users.CreationScreen
 import com.brosedda.mymediary.ui.screens.users.LoginScreen
 import com.brosedda.mymediary.ui.screens.users.ProfilesScreen
+import com.brosedda.mymediary.ui.state.UsersList
 import com.brosedda.mymediary.ui.theme.MyMediaRyTheme
 import com.brosedda.mymediary.ui.viewModel.users.UserViewModel
 
@@ -52,13 +53,13 @@ private fun goToMainApp(context: Context, navController: NavHostController, user
 
 @Composable
 fun UserApp(
-    viewModel: UserViewModel = viewModel(),
     navController: NavHostController = rememberNavController()
 ) {
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentScreen = UsersRoute.valueOf(
         backStackEntry?.destination?.route ?: UsersRoute.Start.name
     )
+    val viewModel: UserViewModel = viewModel(factory = UserViewModel.Factory)
 
     Scaffold(
         topBar = {
@@ -89,7 +90,7 @@ fun UserApp(
             ) {
                 composable(route = UsersRoute.Start.name) {
                     ProfilesScreen(
-                        users = uiState.users,
+                        users = uiState.usersList,
                         navigateToLogin = {
                             viewModel.setCurrentUser(it)
                             navController.navigate(UsersRoute.Login.name)
@@ -116,8 +117,13 @@ fun UserApp(
                 }
 
                 composable(route = UsersRoute.Create.name) {
-                   CreationScreen(
-                       users = uiState.users.map { it.name },
+                    val users: List<User> = when (uiState.usersList) {
+                        is UsersList.Success -> (uiState.usersList as UsersList.Success).users
+                        else -> emptyList()
+                    }
+
+                    CreationScreen(
+                       users = users.map { it.name },
                        avatar = uiState.currentUser.avatar,
                        chooseAvatar = { navController.navigate(UsersRoute.Avatar.name) },
                        addProfile = { name: String, password: String? ->

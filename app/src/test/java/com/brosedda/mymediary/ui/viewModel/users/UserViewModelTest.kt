@@ -1,14 +1,27 @@
-package com.brosedda.mymediary.ui.test
+package com.brosedda.mymediary.ui.viewModel.users
 
-import com.brosedda.mymediary.ui.viewModel.users.UserViewModel
-import org.junit.Assert.assertEquals
-import org.junit.Test
 import com.brosedda.mymediary.R
+import com.brosedda.mymediary.data.fake.FakeUserRepository
 import com.brosedda.mymediary.data.model.User
+import com.brosedda.mymediary.rules.TestDispatcherRule
+import com.brosedda.mymediary.ui.state.UsersList
+import kotlinx.coroutines.test.runTest
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
+import org.junit.Before
+import org.junit.Rule
+import org.junit.Test
 
 class UserViewModelTest {
-    private val viewModel = UserViewModel()
+    @get:Rule
+    val testDispatcher = TestDispatcherRule()
+
+    private lateinit var viewModel: UserViewModel
+
+    @Before
+    fun setViewModel() = runTest {
+        viewModel = UserViewModel(repository = FakeUserRepository())
+    }
 
     @Test
     fun userViewModel_userChosen_currentUserIsSet() {
@@ -35,10 +48,11 @@ class UserViewModelTest {
 
     @Test
     fun userViewModel_profileWithPasswordCreated_newProfileAddedToProfileList() {
-        val numberOfProfile = viewModel.uiState.value.users.size
+        val usersList = viewModel.uiState.value.usersList as UsersList.Success
+        val numberOfProfile = usersList.users.size
         viewModel.addProfile("user", "password")
 
-        viewModel.uiState.value.users.let {
+        usersList.users.let {
             val user = it.last()
 
             assertEquals(numberOfProfile + 1, it.size)
@@ -51,7 +65,7 @@ class UserViewModelTest {
     fun userViewModel_profileWithoutPasswordCreated_newProfileAddedToProfileList() {
         viewModel.addProfile("user", null)
 
-        viewModel.uiState.value.users.let {
+        (viewModel.uiState.value.usersList as UsersList.Success).users.let {
             val user = it.last()
 
             assertEquals(2, it.size)

@@ -1,6 +1,5 @@
-package com.brosedda.mymediary.ui.test
+package com.brosedda.mymediary.ui.viewModel.users
 
-import com.brosedda.mymediary.ui.viewModel.users.AvatarViewModel
 import com.brosedda.mymediary.R
 import org.junit.Assert.assertEquals
 import org.junit.Test

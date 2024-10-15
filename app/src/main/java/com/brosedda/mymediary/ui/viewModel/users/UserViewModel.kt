@@ -2,17 +2,46 @@ package com.brosedda.mymediary.ui.viewModel.users
 
 import androidx.annotation.DrawableRes
 import androidx.lifecycle.ViewModel
-import com.brosedda.mymediary.data.DataSource.users
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
+import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewmodel.initializer
+import androidx.lifecycle.viewmodel.viewModelFactory
+import com.brosedda.mymediary.MyMediaRyApplication
 import com.brosedda.mymediary.data.model.User
+import com.brosedda.mymediary.data.repository.UserRepository
 import com.brosedda.mymediary.ui.state.UserUiState
+import com.brosedda.mymediary.ui.state.UsersList
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
 
-class UserViewModel: ViewModel() {
-    private val _uiState = MutableStateFlow(UserUiState(users, User("")))
+class UserViewModel(private val repository: UserRepository): ViewModel() {
+    private var usersList: UsersList = UsersList.Loading
+    private val _uiState = MutableStateFlow(UserUiState(usersList, User("")))
     val uiState: StateFlow<UserUiState> = _uiState.asStateFlow()
+
+    init {
+        getUsers()
+    }
+
+    private fun getUsers() {
+        viewModelScope.launch {
+            usersList = try {
+                UsersList.Success(repository.getUsers())
+            } catch (e: Exception) {
+                UsersList.Error
+            }
+
+            _uiState.update { currentState ->
+                currentState.copy(
+                    usersList = usersList
+                )
+            }
+        }
+    }
 
     fun setCurrentUser(user: User) {
         _uiState.update { currentState ->
@@ -36,20 +65,31 @@ class UserViewModel: ViewModel() {
     }
 
     fun addProfile(name: String, password: String?) {
-        _uiState.value.let {
-            val users = listOf(
-                *it.users.toTypedArray(),
+        viewModelScope.launch {
+            repository.adduser(
                 User(
                     name = name,
                     password = password,
-                    avatar = it.currentUser.avatar
+                    avatar = _uiState.value.currentUser.avatar
                 )
             )
+        }
 
+        viewModelScope.launch {
             _uiState.update { currentState ->
                 currentState.copy(
-                    users = users
+                    usersList = UsersList.Success(repository.getUsers())
                 )
+            }
+        }
+    }
+
+    companion object {
+        val Factory: ViewModelProvider.Factory = viewModelFactory {
+            initializer {
+                val application = this[APPLICATION_KEY] as MyMediaRyApplication
+                val userRepository = application.container.userRepository
+                UserViewModel(repository = userRepository)
             }
         }
     }

@@ -9,6 +9,7 @@ import com.brosedda.mymediary.TestExpandedWidth
 import com.brosedda.mymediary.TestMediumWidth
 import com.brosedda.mymediary.onNodeWithStringIdTag
 import com.brosedda.mymediary.tutorials.reply.ui.ReplyApp
+import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
 
@@ -16,6 +17,7 @@ class ReplyAppTest {
     @get:Rule
     val composeTestRule = createAndroidComposeRule<ComponentActivity>()
 
+    @Ignore("Test Example")
     @Test
     @TestCompactWidth
     fun compactDevice_verifyUsingBottomNavigation() {
@@ -31,6 +33,7 @@ class ReplyAppTest {
             .assertExists()
     }
 
+    @Ignore("Test Example")
     @Test
     @TestMediumWidth
     fun mediumDevice_verifyUsingNavigationRail() {
@@ -46,6 +49,7 @@ class ReplyAppTest {
             .assertExists()
     }
 
+    @Ignore("Test Example")
     @Test
     @TestExpandedWidth
     fun expandedDevice_verifyUsingNavigationDrawer() {

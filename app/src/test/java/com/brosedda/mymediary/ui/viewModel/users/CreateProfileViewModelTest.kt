@@ -1,8 +1,7 @@
-package com.brosedda.mymediary.ui.test
+package com.brosedda.mymediary.ui.viewModel.users
 
-import com.brosedda.mymediary.data.DataSource
+import com.brosedda.mymediary.data.fake.FakeDataSource
 import com.brosedda.mymediary.data.model.User
-import com.brosedda.mymediary.ui.viewModel.users.CreateProfileViewModel
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotEquals
@@ -12,7 +11,7 @@ import org.junit.Test
 
 class CreateProfileViewModelTest {
     private val viewModel = CreateProfileViewModel()
-    private val users = DataSource.users.map { it.name }
+    private val users = FakeDataSource.users.map { it.name }
     private lateinit var user: User
 
     private val createUser = { name: String, password: String? ->
