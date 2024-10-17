@@ -35,7 +35,7 @@ fun ProfilesScreen(
             users = users.users,
             navigateToLogin = navigateToLogin,
             navigateToCreation = navigateToCreation,
-            modifier = modifier
+            modifier = modifier.fillMaxSize()
         )
     }
 }
