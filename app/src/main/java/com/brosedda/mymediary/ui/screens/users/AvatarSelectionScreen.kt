@@ -38,10 +38,12 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.brosedda.mymediary.R
 import com.brosedda.mymediary.ui.theme.MyMediaRyTheme
+import com.brosedda.mymediary.ui.utils.ScreenType
 import com.brosedda.mymediary.ui.viewModel.users.AvatarViewModel
 
 @Composable
 fun AvatarSelectionScreen(
+    screenType: ScreenType,
     chooseAvatar: (Int) -> Unit,
     modifier: Modifier = Modifier,
     viewModel: AvatarViewModel = viewModel()
@@ -52,7 +54,11 @@ fun AvatarSelectionScreen(
         modifier = modifier
     ) {
         LazyVerticalGrid(
-            columns = GridCells.Fixed(3),
+            columns = when (screenType) {
+                ScreenType.COMPACT_PORTRAIT -> GridCells.Fixed(3)
+                ScreenType.EXPANDED_LANDSCAPE -> GridCells.Adaptive(80.dp)
+                else -> GridCells.Fixed(6)
+            },
             verticalArrangement = Arrangement.spacedBy(24.dp),
             horizontalArrangement = Arrangement.spacedBy(24.dp),
             modifier = Modifier
@@ -142,6 +148,9 @@ private fun Modifier.selectionBorder(condition: Boolean): Modifier {
 @Composable
 fun AvatarSelectionScreenPreview() {
     MyMediaRyTheme(darkTheme = false) {
-        AvatarSelectionScreen({_ -> })
+        AvatarSelectionScreen(
+            ScreenType.COMPACT_PORTRAIT,
+            { _ -> }
+        )
     }
 }

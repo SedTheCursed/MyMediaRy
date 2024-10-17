@@ -25,10 +25,12 @@ import com.brosedda.mymediary.MainActivity
 import com.brosedda.mymediary.R
 import com.brosedda.mymediary.data.model.User
 import com.brosedda.mymediary.ui.components.appBar.UserAppBar
+import com.brosedda.mymediary.ui.utils.ScreenType
 import com.brosedda.mymediary.ui.screens.users.AvatarSelectionScreen
 import com.brosedda.mymediary.ui.screens.users.CreationScreen
 import com.brosedda.mymediary.ui.screens.users.LoginScreen
 import com.brosedda.mymediary.ui.screens.users.ProfilesScreen
+import com.brosedda.mymediary.ui.screens.users.Screen
 import com.brosedda.mymediary.ui.state.UsersList
 import com.brosedda.mymediary.ui.theme.MyMediaRyTheme
 import com.brosedda.mymediary.ui.viewModel.users.UserViewModel
@@ -53,6 +55,8 @@ private fun goToMainApp(context: Context, navController: NavHostController, user
 
 @Composable
 fun UserApp(
+    screenType: ScreenType,
+    modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController()
 ) {
     val backStackEntry by navController.currentBackStackEntryAsState()
@@ -73,7 +77,7 @@ fun UserApp(
                 )
             }
         },
-        modifier = Modifier.fillMaxSize()
+        modifier = modifier.fillMaxSize()
     ) { innerPadding ->
         val uiState by viewModel.uiState.collectAsState()
 
@@ -89,17 +93,22 @@ fun UserApp(
                 modifier = Modifier.padding(dimensionResource(R.dimen.padding_large))
             ) {
                 composable(route = UsersRoute.Start.name) {
-                    ProfilesScreen(
-                        users = uiState.usersList,
-                        navigateToLogin = {
-                            viewModel.setCurrentUser(it)
-                            navController.navigate(UsersRoute.Login.name)
-                        },
-                        navigateToCreation = {
-                            viewModel.setCurrentUser(user = User(""))
-                            navController.navigate(UsersRoute.Create.name)
-                        }
-                    )
+                    Screen(
+                        screenType = screenType,
+                        modifier = Modifier.fillMaxSize()
+                    ) {
+                        ProfilesScreen(
+                            users = uiState.usersList,
+                            navigateToLogin = {
+                                viewModel.setCurrentUser(it)
+                                navController.navigate(UsersRoute.Login.name)
+                            },
+                            navigateToCreation = {
+                                viewModel.setCurrentUser(user = User(""))
+                                navController.navigate(UsersRoute.Create.name)
+                            }
+                        )
+                    }
                 }
 
                 composable(route = UsersRoute.Login.name) {
@@ -108,12 +117,16 @@ fun UserApp(
 
                     if (user.password == null) goToMainApp(context, navController, user)
 
-                    LoginScreen(
-                        user = user,
-                        connect = {
-                            goToMainApp(context, navController, user)
-                        }
-                    )
+                    Screen(
+                        screenType = screenType,
+                    ) {
+                        LoginScreen(
+                            user = user,
+                            connect = {
+                                goToMainApp(context, navController, user)
+                            }
+                        )
+                    }
                 }
 
                 composable(route = UsersRoute.Create.name) {
@@ -122,19 +135,24 @@ fun UserApp(
                         else -> emptyList()
                     }
 
-                    CreationScreen(
-                       users = users.map { it.name },
-                       avatar = uiState.currentUser.avatar,
-                       chooseAvatar = { navController.navigate(UsersRoute.Avatar.name) },
-                       addProfile = { name: String, password: String? ->
-                           viewModel.addProfile(name, password)
-                           navController.navigate(UsersRoute.Start.name)
-                       }
-                   )
+                    Screen(
+                        screenType = screenType,
+                    ) {
+                        CreationScreen(
+                            users = users.map { it.name },
+                            avatar = uiState.currentUser.avatar,
+                            chooseAvatar = { navController.navigate(UsersRoute.Avatar.name) },
+                            addProfile = { name: String, password: String? ->
+                                viewModel.addProfile(name, password)
+                                navController.navigate(UsersRoute.Start.name)
+                            }
+                        )
+                    }
                 }
 
                 composable(route = UsersRoute.Avatar.name) {
                     AvatarSelectionScreen (
+                        screenType = screenType,
                         chooseAvatar = { avatar ->
                             viewModel.setAvatar(avatar)
                             navController.navigateUp()
@@ -150,6 +168,6 @@ fun UserApp(
 @Composable
 fun UserAppPreview() {
     MyMediaRyTheme(darkTheme = false) {
-        UserApp()
+        UserApp(ScreenType.COMPACT_PORTRAIT)
     }
 }
