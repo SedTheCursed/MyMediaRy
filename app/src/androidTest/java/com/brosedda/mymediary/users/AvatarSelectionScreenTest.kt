@@ -15,6 +15,7 @@ import com.brosedda.mymediary.data.avatars
 import com.brosedda.mymediary.onNodeWithStringId
 import com.brosedda.mymediary.onNodeWithStringIdDescription
 import com.brosedda.mymediary.ui.screens.users.AvatarSelectionScreen
+import com.brosedda.mymediary.ui.utils.ScreenType
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
@@ -30,7 +31,8 @@ class AvatarSelectionScreenTest {
     fun setupScreen() {
         composeTestRule.setContent {
             AvatarSelectionScreen(
-                chooseAvatar = { selected = it }
+                chooseAvatar = { selected = it },
+                screenType = ScreenType.COMPACT_PORTRAIT
             )
         }
     }

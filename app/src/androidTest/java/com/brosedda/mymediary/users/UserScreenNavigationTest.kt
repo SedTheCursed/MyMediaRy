@@ -4,7 +4,6 @@ import androidx.activity.ComponentActivity
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithContentDescription
-import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTextInput
@@ -16,6 +15,7 @@ import com.brosedda.mymediary.onNodeWithStringId
 import com.brosedda.mymediary.onNodeWithStringIdDescription
 import com.brosedda.mymediary.ui.UserApp
 import com.brosedda.mymediary.ui.UsersRoute
+import com.brosedda.mymediary.ui.utils.ScreenType
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -32,7 +32,10 @@ class UserScreenNavigationTest {
             navController = TestNavHostController(LocalContext.current).apply {
                 navigatorProvider.addNavigator(ComposeNavigator())
             }
-            UserApp(navController = navController)
+            UserApp(
+                navController = navController,
+                screenType = ScreenType.COMPACT_PORTRAIT
+            )
         }
     }
 

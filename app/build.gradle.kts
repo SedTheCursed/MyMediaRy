@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -41,7 +42,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.15"
     }
     packaging {
         resources {
@@ -70,6 +71,9 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.serialization)
     implementation(libs.coil)
+    implementation(libs.room)
+    implementation(libs.room.runtime)
+    ksp(libs.room.compiler)
     testImplementation(libs.junit)
     testImplementation(libs.coroutines.test)
     androidTestImplementation(libs.androidx.junit)
