@@ -73,6 +73,7 @@ dependencies {
     implementation(libs.coil)
     implementation(libs.room)
     implementation(libs.room.runtime)
+    implementation(libs.datastore)
     ksp(libs.room.compiler)
     testImplementation(libs.junit)
     testImplementation(libs.coroutines.test)

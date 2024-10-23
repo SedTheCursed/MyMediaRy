@@ -267,6 +267,12 @@
     <string name="yes">Yes</string>
     <string name="required_fields">*required fields</string>
 
+    <!-- Dessert Release -->
+    <string name="title_activity_dessert">Dessert Release</string>
+    <string name="top_bar_name">Android Dessert Release</string>
+    <string name="grid_layout_toggle">Grid layout</string>
+    <string name="linear_layout_toggle">Linear layout</string>
+
     <!-- Profile -->
     <string name="back_button">Revenir en arrière</string>
     <string name="add_profile">Ajouter un profil</string>
