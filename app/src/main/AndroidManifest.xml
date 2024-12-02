@@ -3,58 +3,59 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    
-<!--    <application-->
-<!--        android:name=".MyMediaRyApplication"-->
-<!--        android:allowBackup="true"-->
-<!--        android:dataExtractionRules="@xml/data_extraction_rules"-->
-<!--        android:fullBackupContent="@xml/backup_rules"-->
-<!--        android:icon="@mipmap/ic_launcher"-->
-<!--        android:label="@string/app_name"-->
-<!--        android:roundIcon="@mipmap/ic_launcher_round"-->
-<!--        android:supportsRtl="true"-->
-<!--        android:theme="@style/Theme.MyMediaRy"-->
-<!--        tools:targetApi="31">-->
-<!--        <activity-->
-<!--            android:name=".UserActivity"-->
-<!--            android:exported="true"-->
-<!--            android:theme="@style/Theme.MyMediaRy">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
-<!--        <activity-->
-<!--            android:name=".MainActivity"-->
-<!--            android:exported="true"-->
-<!--            android:label="@string/title_activity_main"-->
-<!--            android:theme="@style/Theme.MyMediaRy" />-->
-<!--        <activity-->
-<!--            android:name=".tutorials.woof.WoofActivity"-->
-<!--            android:exported="true"-->
-<!--            android:label="@string/title_activity_woof"-->
-<!--            android:theme="@style/Theme.MyMediaRy" />-->
-<!--        &lt;!&ndash; <activity &ndash;&gt;-->
-<!--        &lt;!&ndash; android:name=".tutorials.unscramble.UnscrambleActivity" &ndash;&gt;-->
-<!--        &lt;!&ndash; android:exported="true" &ndash;&gt;-->
-<!--        &lt;!&ndash; android:label="@string/title_activity_unscramble" &ndash;&gt;-->
-<!--        &lt;!&ndash; android:theme="@style/Theme.MyMediaRy" /> &ndash;&gt;-->
-<!--        <activity-->
-<!--            android:name=".tutorials.cupcake.CupcakeActivity"-->
-<!--            android:exported="true"-->
-<!--            android:label="@string/title_activity_cupcake"-->
-<!--            android:theme="@style/Theme.MyMediaRy" />-->
-<!--        <activity-->
-<!--            android:name=".tutorials.reply.ReplyActivity"-->
-<!--            android:exported="true"-->
-<!--            android:label="@string/title_activity_reply"-->
-<!--            android:theme="@style/Theme.MyMediaRy" />-->
-<!--        <activity-->
-<!--            android:name=".tutorials.race.RaceActivity"-->
-<!--            android:exported="true"-->
-<!--            android:label="@string/title_activity_race"-->
-<!--            android:theme="@style/Theme.MyMediaRy" />-->
-<!--    </application>-->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+        <application
+            android:name=".MyMediaRyApplication"
+            android:allowBackup="true"
+            android:dataExtractionRules="@xml/data_extraction_rules"
+            android:fullBackupContent="@xml/backup_rules"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.MyMediaRy"
+            tools:targetApi="31">
+            <activity
+                android:name=".UserActivity"
+                android:exported="true"
+                android:theme="@style/Theme.MyMediaRy">
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+            </activity>
+            <activity
+                android:name=".MainActivity"
+                android:exported="true"
+                android:label="@string/title_activity_main"
+                android:theme="@style/Theme.MyMediaRy" />
+            <activity
+                android:name=".tutorials.woof.WoofActivity"
+                android:exported="true"
+                android:label="@string/title_activity_woof"
+                android:theme="@style/Theme.MyMediaRy" />
+            <!-- <activity -->
+            <!-- android:name=".tutorials.unscramble.UnscrambleActivity" -->
+            <!-- android:exported="true" -->
+            <!-- android:label="@string/title_activity_unscramble" -->
+            <!-- android:theme="@style/Theme.MyMediaRy" /> -->
+            <activity
+                android:name=".tutorials.cupcake.CupcakeActivity"
+                android:exported="true"
+                android:label="@string/title_activity_cupcake"
+                android:theme="@style/Theme.MyMediaRy" />
+            <activity
+                android:name=".tutorials.reply.ReplyActivity"
+                android:exported="true"
+                android:label="@string/title_activity_reply"
+                android:theme="@style/Theme.MyMediaRy" />
+            <activity
+                android:name=".tutorials.race.RaceActivity"
+                android:exported="true"
+                android:label="@string/title_activity_race"
+                android:theme="@style/Theme.MyMediaRy" />
+        </application>
 
 <!--    Mars Manifest-->
 <!--    <application -->
@@ -103,27 +104,48 @@
 <!--        </activity>-->
 <!--    </application>-->
 
-<!--    Dessert Application-->
-    <application
-        android:name=".tutorials.dessertrelease.DessertApplication"
-        android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.MyMediaRy"
-        tools:targetApi="31">
-        <activity
-            android:name=".tutorials.dessertrelease.DessertActivity"
-            android:exported="true"
-            android:label="@string/title_activity_dessert"
-            android:theme="@style/Theme.MyMediaRy" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-    </application>
+    <!--    Dessert Application-->
+    <!--    <application-->
+    <!--        android:name=".tutorials.dessertrelease.DessertApplication"-->
+    <!--        android:allowBackup="true"-->
+    <!--        android:dataExtractionRules="@xml/data_extraction_rules"-->
+    <!--        android:fullBackupContent="@xml/backup_rules"-->
+    <!--        android:icon="@mipmap/ic_launcher"-->
+    <!--        android:label="@string/app_name"-->
+    <!--        android:roundIcon="@mipmap/ic_launcher_round"-->
+    <!--        android:supportsRtl="true"-->
+    <!--        android:theme="@style/Theme.MyMediaRy"-->
+    <!--        tools:targetApi="31">-->
+    <!--        <activity-->
+    <!--            android:name=".tutorials.dessertrelease.DessertActivity"-->
+    <!--            android:exported="true"-->
+    <!--            android:label="@string/title_activity_dessert"-->
+    <!--            android:theme="@style/Theme.MyMediaRy" >-->
+    <!--            <intent-filter>-->
+    <!--                <action android:name="android.intent.action.MAIN" />-->
+    <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+    <!--            </intent-filter>-->
+    <!--        </activity>-->
+    <!--    </application>-->
+
+    <!--    Blur-o-matic application -->
+<!--    <application-->
+<!--        android:name=".tutorials.bluromatic.BluromaticApplication"-->
+<!--        android:icon="@mipmap/ic_launcher"-->
+<!--        android:label="@string/app_name"-->
+<!--        android:roundIcon="@mipmap/ic_launcher_round"-->
+<!--        android:supportsRtl="true"-->
+<!--        android:theme="@style/Theme.MyMediaRy"-->
+<!--        tools:targetApi="33">-->
+<!--        <activity-->
+<!--            android:name=".tutorials.bluromatic.BlurActivity"-->
+<!--            android:exported="true"-->
+<!--            android:label="@string/title_activity_bluromatic"-->
+<!--            android:theme="@style/Theme.MyMediaRy">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+<!--    </application>-->
 </manifest>
