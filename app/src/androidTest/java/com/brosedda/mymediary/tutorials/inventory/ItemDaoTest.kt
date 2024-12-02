@@ -1,4 +1,4 @@
-package com.brossedda.mymediary
+package com.brosedda.mymediary.tutorials.inventory
 
 import android.content.Context
 import androidx.room.Room

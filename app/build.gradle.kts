@@ -12,7 +12,7 @@ android {
     defaultConfig {
         applicationId = "com.brosedda.mymediary"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -52,7 +52,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -73,8 +72,9 @@ dependencies {
     implementation(libs.coil)
     implementation(libs.room)
     implementation(libs.room.runtime)
-    implementation(libs.datastore)
     ksp(libs.room.compiler)
+    implementation(libs.datastore)
+    implementation(libs.work)
     testImplementation(libs.junit)
     testImplementation(libs.coroutines.test)
     androidTestImplementation(libs.androidx.junit)
@@ -83,6 +83,7 @@ dependencies {
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
     androidTestImplementation(libs.navigation.testing)
+    androidTestImplementation(libs.work.testing)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }
