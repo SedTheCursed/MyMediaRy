@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.brosedda.mymediary.MyMediaRyApplication
+import com.brosedda.mymediary.data.encrypt
 import com.brosedda.mymediary.data.model.User
 import com.brosedda.mymediary.data.repository.UserRepository
 import com.brosedda.mymediary.ui.state.UserUiState
@@ -69,7 +70,7 @@ class UserViewModel(private val repository: UserRepository): ViewModel() {
             repository.adduser(
                 User(
                     name = name,
-                    password = password,
+                    password = password?.encrypt(),
                     avatar = _uiState.value.currentUser.avatar
                 )
             )

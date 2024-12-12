@@ -3,11 +3,14 @@ package com.brosedda.mymediary.ui.viewModel.users
 import com.brosedda.mymediary.R
 import com.brosedda.mymediary.data.fake.FakeUserRepository
 import com.brosedda.mymediary.data.model.User
+import com.brosedda.mymediary.data.verify
 import com.brosedda.mymediary.rules.TestDispatcherRule
 import com.brosedda.mymediary.ui.state.UsersList
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -57,7 +60,8 @@ class UserViewModelTest {
 
             assertEquals(numberOfProfile + 1, it.size)
             assertEquals("user", user.name)
-            assertEquals("password", user.password)
+            assertNotNull(user.password)
+            assertTrue(user.password!!.verify("password"))
         }
     }
 
