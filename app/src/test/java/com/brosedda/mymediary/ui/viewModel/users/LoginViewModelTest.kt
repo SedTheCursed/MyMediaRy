@@ -1,5 +1,6 @@
 package com.brosedda.mymediary.ui.viewModel.users
 
+import com.brosedda.mymediary.data.encrypt
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotEquals
@@ -8,7 +9,7 @@ import org.junit.Test
 
 class LoginViewModelTest {
     private val viewModel = LoginViewModel()
-    private val password = "password"
+    private val password = "password".encrypt()
 
     @Test
     fun loginViewModel_changeVisibility_inverseIsVisibleValue() {

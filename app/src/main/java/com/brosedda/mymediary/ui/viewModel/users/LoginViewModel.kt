@@ -4,6 +4,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import com.brosedda.mymediary.data.check
 
 class LoginViewModel: ViewModel() {
     var input by mutableStateOf("")
@@ -23,6 +24,6 @@ class LoginViewModel: ViewModel() {
     }
 
     fun checkPassword(password: String) {
-        isWrong = password != input
+        isWrong = !input.check(password)
     }
 }

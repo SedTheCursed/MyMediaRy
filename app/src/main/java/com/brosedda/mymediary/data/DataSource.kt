@@ -7,7 +7,7 @@ object DataSource {
     val users: List<User> = listOf(
         User(
             name = "Sed",
-            password = "Dev@6",
+            password = "Dev@6".encrypt(),
             avatar = R.drawable.ic_woof_logo
         ),
         User(
