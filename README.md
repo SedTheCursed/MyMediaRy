@@ -14,8 +14,7 @@ If there is applications for each format, one which is multimedia seems lacking,
 The application is Android first, but some of the functionalities, such as registering items manually, can benefit from
 a bigger device with keyboard.
 
-[//]: # (
-## Quick Start
+[//]: # (## Quick Start
 TODO: installation links once project finished)
 
 ## Usage:
