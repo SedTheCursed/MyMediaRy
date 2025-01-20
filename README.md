@@ -14,9 +14,13 @@ If there is applications for each format, one which is multimedia seems lacking,
 The application is Android first, but some of the functionalities, such as registering items manually, can benefit from
 a bigger device with keyboard.
 
+[//]: # (
+## Quick Start
+TODO: installation links once project finished)
+
 ## Usage:
 
-**/Design** contains the files useful for the planning and design phases, such as the specifications and
+**/Design** contains the files useful for the planning and design phases, such as the specifications and 
 the UML diagrams.
 
 ## Contributing
@@ -27,3 +31,38 @@ the UML diagrams.
 git clone https://github.com/SedTheCursed/MyMediaRy.git
 cd MyMediaRy
 ```
+
+[//]: # (### Build the project)
+
+[//]: # ()
+[//]: # (```bash)
+
+[//]: # (go build)
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (### Run the project)
+
+[//]: # ()
+[//]: # (```bash)
+
+[//]: # (./zipzod -i ./input -o ./output.zip)
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (### Run the tests)
+
+[//]: # ()
+[//]: # (```bash)
+
+[//]: # (go test ./...)
+
+[//]: # (```)
+
+[//]: # (### Submit a pull request)
+
+[//]: # ()
+[//]: # (If you'd like to contribute, please fork the repository and open a pull request to the `main` branch.)
+
